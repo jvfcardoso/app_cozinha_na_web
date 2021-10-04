@@ -14,6 +14,7 @@ const Tab = createBottomTabNavigator();
 export default function Routes(){
     return(
         <Tab.Navigator
+            borderTopColor='transparent'
             initialRouteName="Home"
             screenOptions={{
                 tabBarStyle:{
@@ -37,7 +38,7 @@ export default function Routes(){
                 options={{
                     headerShown:false,
                     tabBarIcon: ({focused}) => (
-                        <MaterialCommunityIcons name="food-variant" size={24} color="#121212" />                    )
+                        <MaterialCommunityIcons name={focused ? "food-apple" : "food-apple-outline"} size={focused ? 30 : 26} color="#121212" />                    )
                 }}
             />
             <Tab.Screen
@@ -45,8 +46,8 @@ export default function Routes(){
                 component={Cursos}
                 options={{
                     headerShown:false,
-                    tabBarIcon: () => (
-                        <MaterialCommunityIcons name="book" size={24} color="#121212" />                    )
+                    tabBarIcon: ({focused}) => (
+                        <MaterialCommunityIcons name={focused ? "book" : "book-outline"} size={focused ? 30 : 26} color="#121212" />                    )
                 }}
             />
             <Tab.Screen
@@ -55,8 +56,8 @@ export default function Routes(){
                 options={{
                     headerShown:false,
                     tabBarLabel:'',
-                    tabBarIcon:() => (
-                        <ButtonHome/>
+                    tabBarIcon:({focused, size}) => (
+                        <ButtonHome icone={focused ? "home" : "home-outline"} size={focused ? 30 : 26}/>
                     )
                 }}
             />
@@ -65,8 +66,8 @@ export default function Routes(){
                 component={Sobre}
                 options={{
                     headerShown:false,
-                    tabBarIcon: () => (
-                        <MaterialCommunityIcons name="information" size={24} color="#121212" />                    )
+                    tabBarIcon: ({focused}) => (
+                        <MaterialCommunityIcons name={focused ? "information" : "information-outline"} size={focused ? 30 : 26} color="#121212" />                    )
                 }}
                 
             />
@@ -75,8 +76,8 @@ export default function Routes(){
                 component={Perfil}
                 options={{
                     headerShown:false,
-                    tabBarIcon: () => (
-                        <MaterialCommunityIcons name="account" size={24} color="#121212" />                    )
+                    tabBarIcon: ({focused}) => (
+                        <MaterialCommunityIcons name={focused ? "account" : "account-outline"} size={focused ? 30 : 26} color="#121212" />                    )
                 }}
             />
         </Tab.Navigator>

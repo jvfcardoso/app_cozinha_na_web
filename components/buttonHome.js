@@ -2,10 +2,10 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 
-export default function ButtonHome(){
+export default function ButtonHome({icone, size}){
     return(
         <View style={styles.container}>
-            <MaterialCommunityIcons name="home" size={30} color={'#121212'}/>
+            <MaterialCommunityIcons name={icone} size={size} color={'#121212'}/>
         </View>
     )
 }

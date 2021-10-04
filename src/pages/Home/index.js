@@ -1,23 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+    Container,
+    Title
+ } from './styles';
 
 export default function Home(){
     return(
-        <View style={styles.container}>
-            <Text style={styles.title}>Home</Text>
-        </View>
+        <Container >
+            <Title>Home</Title>
+        </Container>
     )
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        backgroundColor: '#121212',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    title:{
-        color: '#FFF',
-        fontSize: 30,
-    }
-})
