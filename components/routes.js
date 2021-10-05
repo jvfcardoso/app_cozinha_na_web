@@ -18,7 +18,7 @@ export default function Routes(){
             initialRouteName="Home"
             screenOptions={{
                 tabBarStyle:{
-                    backgroundColor: '#fef5e0',
+                    backgroundColor: '#FCF3C2',
                     borderTopColor: 'transparent',
                     paddingBottom: 5,
                     paddingTop: 5,
