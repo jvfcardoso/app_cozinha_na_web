@@ -79,7 +79,6 @@ export const FoodsReceitasAgrado = styled.Image`
 `;
 
 export const ViewButtons = styled.View`
-    justify-content: space-between;
     flex-direction: row;
-
+    justify-content: space-evenly;
 `;
