@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "appCozinhaWeb",
+    "name": "Cozinha na Web",
     "slug": "appCozinhaWeb",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.etec.CozinhaWeb"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -14,11 +14,11 @@ export default function Routes(){
     return(
             <Tab.Navigator
                 borderTopColor='transparent'
-                initialRouteName="Perfil"
+                initialRouteName="Sobre"
                 screenOptions={{
                     tabBarStyle:{
                         backgroundColor: '#FCF3C2',
-                        borderTopColor: 'transparent',
+                        borderTopColor: '#000',
                         paddingBottom: 5,
                         paddingTop: 5,
                     },
@@ -77,6 +77,7 @@ export default function Routes(){
                         tabBarIcon: ({focused}) => (
                             <MaterialCommunityIcons name={focused ? "account" : "account-outline"} size={focused ? 30 : 26} color="#121212" />                    )
                     }}
+                    
                 />
             </Tab.Navigator>
     )

@@ -44,11 +44,12 @@ export const BotaoCadastro = styled.TouchableOpacity`
 `;
 
 export const Input = styled.TextInput`
-    width: 90%;
+    width: 80%;
     margin-bottom: 15px;
     border-bottom-width: 1px;
+    border-bottom-color: #121212;
     height: 30px;
     padding: 5px;
     color: #121212;
-
+    
 `;

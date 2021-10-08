@@ -22,12 +22,14 @@ export default function Perfil(){
                 <Input
                     placeholder="E-mail"
                     autoCorrect={false}
-                    onChangeText={() => {}}
+                    autoCapitalize="none"
                 />
                 <Input
                     placeholder="Senha"
                     autoCorrect={false}
-                    onChangeText={() => {}}
+                    autoCapitalize="none"
+                    maxLength={20}
+                    secureTextEntry={true}
                 />
 
                 <BotaoLogin activeOpacity={0.7}>
