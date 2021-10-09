@@ -14,11 +14,11 @@ export default function Routes(){
     return(
             <Tab.Navigator
                 borderTopColor='transparent'
-                initialRouteName="Sobre"
+                initialRouteName="Home"
                 screenOptions={{
                     tabBarStyle:{
                         backgroundColor: '#FCF3C2',
-                        borderTopColor: '#000',
+                        borderTopColor: 'transparent',
                         paddingBottom: 5,
                         paddingTop: 5,
                     },
