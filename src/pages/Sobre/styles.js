@@ -9,6 +9,7 @@ export const Container = styled.ScrollView`
 export const Titulo = styled.Text`
     font-size: 25px;
     font-weight: bold;
+    text-align: left;
 `;
 
 export const Logo = styled.Image`
@@ -39,34 +40,32 @@ export const Banner = styled.Image`
 `;
 
 export const BoxQuemSomos = styled.View`
-    margin-top: 20px;
-    background-color: #FCF3C2;
     width: 90%;
-    padding: 5px;
-    padding-bottom: 20px;
-    align-items: center;
+    background-color: #FCF3C2;
+    padding-bottom: 10px;
+    margin-top: 20px;
     border-radius: 8px;
+    padding: 15px;
 `;
 
 export const TextQuemSomos = styled.Text`
     text-align: justify;
-    width: 90%;
-
 `;
 
 export const BoxComo = styled.View`
     margin-top: 20px;
     background-color: #FCF3C2;
     width: 90%;
-    padding: 5px;
-    align-items: center;
+    padding: 15px;
     border-radius: 8px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    
 `;
 
 export const TextComo = styled.Text`
     text-align: justify;
-    width: 90%;
+
 `;
 
 export const BoxSobre = styled.View`

@@ -14,7 +14,7 @@ export default function Routes(){
     return(
             <Tab.Navigator
                 borderTopColor='transparent'
-                initialRouteName="Home"
+                initialRouteName="Cursos"
                 screenOptions={{
                     tabBarStyle:{
                         backgroundColor: '#FCF3C2',

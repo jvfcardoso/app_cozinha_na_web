@@ -17,7 +17,7 @@ import {
 
 export default function Sobre(){
     return(
-        <Container >
+        <Container showsVerticalScrollIndicator={false}>
             <BoxLogo>
                 <Logo
                     resizeMode="stretch"
@@ -39,9 +39,23 @@ export default function Sobre(){
             <BoxQuemSomos>
                 <Titulo>Quem somos</Titulo>
                 <TextQuemSomos>
-                    Uma equipe disposta a ajudar aqueles que pouco sabem cozinhar
-                    e também para aqueles que pretendem aprimorar seus conhecimentos
-                    culinários.
+                    O projeto Cozinha na Web propõe auxiliar
+                    todas as pessoas que têm interesse pelo meio
+                    culinário, seja para aprender os primeiros
+                    passos na confecção de pratos ou para
+                    aprimorar as habilidades e conhecimentos
+                    gastronômicos pré existentes Contando com
+                    o suporte de chefs experientes e dicas e
+                    explicações de cozinheiros da própria
+                    comunidade, qualquer um poderá preparar
+                    uma boa receita para si mesmo ou para as
+                    pessoas que ama. Pensado para ser
+                    dinâmico, intuitivo e flexível, o aplicativo contará
+                    com conteúdo bem estruturado e acessível,
+                    oferecendo a melhor experiência possível
+                    para você desenvolver suas habilidades e
+                    surpreender até mesmo os paladares mais
+                    exigentes.
                 </TextQuemSomos>
 
             </BoxQuemSomos>
@@ -49,13 +63,18 @@ export default function Sobre(){
             <BoxComo>
                 <Titulo>Como</Titulo>
                 <TextComo>
-                    Usando um site como inspiração (nome do site) nos inspiraremos em um método
-                    onde você coloca qualquer tipo de alimento que tenha em casa e em seguida o 
-                    site indica possibilidades de receitas para fazer com tais ingredientes.
-                    Haverá um suporte técnico totalmente gratuito de mestres e também amadores que
-                    vão prestar o suporte necessário.
-                    O site também irá conter informações nutricionais de cada tipo de alimento,
-                    dizendo as calorias, carboidratos, proteínas, sódio entre outros.
+                    O objetivo geral do projeto é auxiliar pessoas
+                    com os mais diversos níveis de habilidade na
+                    cozinha, a preparar refeições saborosas e
+                    nutritivas, para si ou para outras pessoas,
+                    oferecendo dicas e sugerindo ingredientes
+                    para a confecção dos pratos. De acordo com
+                    o nível de habilidade do usuário, identificado
+                    previamente, serão sugeridas opções de
+                    receitas mais adequadas ao seu perfil. Haverá
+                    a opção de escolha de uma receita, com base
+                    nos ingredientes que a pessoa tem em casa,
+                    algo inovador no mercado brasileiro.
                 </TextComo>
             </BoxComo>
             </BoxBanner>

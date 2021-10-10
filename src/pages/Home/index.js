@@ -23,7 +23,7 @@ import {
 
 export default function Home(){
     return(
-        <Container >
+        <Container showsVerticalScrollIndicator={false}>
                 <BoxLogo>
                     <Logo
                         source={require('../../../assets/imagens/logo.png')}

@@ -33,7 +33,7 @@ export const TextButton = styled.Text`
 `;
 
 export const ListTipoReceitas = styled.ScrollView`
-    
+    margin-right: 15px;
 `;
 
 export const TitleTipoReceitas = styled.Text`
@@ -55,8 +55,7 @@ export const Cartao = styled.View`
     background-color: #FCF3C2;
     margin-left: 15px;
     align-items: center;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 `;
 
 export const Legendas = styled.Text`
@@ -70,11 +69,11 @@ export const TitleReceitasAgrado = styled.Text`
     margin-left: 15px;
     margin-bottom: 10px;
     margin-top: 50px;
-
 `;
 
 export const ListReceitasAgrado = styled.ScrollView`
     margin-bottom: 30px;
+    margin-right: 15px;
 `;
 
 export const FoodsReceitasAgrado = styled.Image`
@@ -92,13 +91,12 @@ export const Banner = styled.Image`
     width: 90%;
     height: 100px;
     border-radius: 10px;
-`;
+    `;
 
 export const BoxBanner = styled.View`
     align-items: center;
     justify-content: center;
 `;
-
 
 export const BoxBotaoShare = styled.TouchableOpacity`
 
