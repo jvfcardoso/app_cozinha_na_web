@@ -1,11 +1,11 @@
 import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { TelaLogin } from '../components/CustomNavigator';
 import Home from '../src/pages/Home';
 import Cursos from '../src/pages/Cursos';
-import Perfil from '../src/pages/Perfil/perfilLogin';
 import Receitas from '../src/pages/Receitas';
 import Sobre from '../src/pages/Sobre';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
 import ButtonHome from '../components/buttonHome';
 
 const Tab = createBottomTabNavigator();
@@ -54,7 +54,7 @@ export default function Routes(){
                     options={{
                         headerShown:false,
                         tabBarLabel:'',
-                        tabBarIcon:({focused, size}) => (
+                        tabBarIcon:({focused}) => (
                             <ButtonHome icone={focused ? "home" : "home-outline"} size={focused ? 30 : 26}/>
                         )
                     }}
@@ -71,7 +71,7 @@ export default function Routes(){
                 />
                 <Tab.Screen
                     name="Perfil"
-                    component={Perfil}
+                    component={TelaLogin}
                     options={{
                         headerShown:false,
                         tabBarIcon: ({focused}) => (

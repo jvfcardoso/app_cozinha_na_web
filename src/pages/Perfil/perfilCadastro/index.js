@@ -1,4 +1,5 @@
 import React from 'react';
+import {Alert} from 'react-native';
 import {
     Container,
     Logo,
@@ -53,7 +54,7 @@ import {
                         />
                 </BoxTelSenha>
 
-                <BotaoCadastro activeOpacity={0.7}>
+                <BotaoCadastro activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em Desenvolvimento!')}>
                     <TextoBotao>
                         Cadastrar
                     </TextoBotao>

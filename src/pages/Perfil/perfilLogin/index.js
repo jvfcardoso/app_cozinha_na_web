@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-    Text
+    Text,
+    Alert
  } from 'react-native';
 import {
     Container,
@@ -11,8 +12,9 @@ import {
     Input,
     TextoBotao,
  } from './styles';
+ import {TelaLogin} from '../../../../components/CustomNavigator';
 
-export default function Perfil(){
+export default function Perfil({navigation}){
     return(
         <Container>
                 <Logo
@@ -32,13 +34,13 @@ export default function Perfil(){
                     secureTextEntry={true}
                 />
 
-                <BotaoLogin activeOpacity={0.7}>
+                <BotaoLogin activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em Desenvolvimento!')}>
                     <TextoBotao>
                         Entrar
                     </TextoBotao>
                 </BotaoLogin>
 
-                <BotaoCadastro activeOpacity={0.7}>
+                <BotaoCadastro activeOpacity={0.7} onPress={() => navigation.navigate('Cadastro')}>
                     <Text>
                         Criar conta gratuita
                     </Text>
