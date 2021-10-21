@@ -49,6 +49,10 @@ export const FoodsTipoReceitas = styled.Image`
     height: 175px;
 `;
 
+export const ButtonReceitas = styled.TouchableOpacity`
+
+`;
+
 export const Cartao = styled.View`
     width: 170px;
     height: 185px;

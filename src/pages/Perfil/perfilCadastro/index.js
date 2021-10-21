@@ -54,7 +54,7 @@ import {
                         />
                 </BoxTelSenha>
 
-                <BotaoCadastro activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em Desenvolvimento!')}>
+                <BotaoCadastro activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em desenvolvimento!')}>
                     <TextoBotao>
                         Cadastrar
                     </TextoBotao>

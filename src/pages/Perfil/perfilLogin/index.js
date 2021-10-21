@@ -12,7 +12,6 @@ import {
     Input,
     TextoBotao,
  } from './styles';
- import {TelaLogin} from '../../../../components/CustomNavigator';
 
 export default function Perfil({navigation}){
     return(
@@ -34,7 +33,7 @@ export default function Perfil({navigation}){
                     secureTextEntry={true}
                 />
 
-                <BotaoLogin activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em Desenvolvimento!')}>
+                <BotaoLogin activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em desenvolvimento!')}>
                     <TextoBotao>
                         Entrar
                     </TextoBotao>

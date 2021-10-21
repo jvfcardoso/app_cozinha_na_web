@@ -18,10 +18,13 @@ import {
     BoxBanner,
     BoxBotaoShare,
     BoxBotaoLike,
- } from './styles';
- import {MaterialCommunityIcons} from '@expo/vector-icons';
+    ButtonReceitas,
 
-export default function Home(){
+ } from './styles';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
+import Receitas from '../Receitas';
+
+export default function Home({navigation}){
     return(
         <Container showsVerticalScrollIndicator={false}>
                 <BoxLogo>
@@ -45,36 +48,46 @@ export default function Home(){
                     </TitleTipoReceitas>
                 
                 <ListTipoReceitas horizontal={true} showsHorizontalScrollIndicator={false}>
+                    <ButtonReceitas activeOpacity={0.8} onPress={() => navigation.navigate(Receitas)}>
                     <Cartao>
                         <FoodsTipoReceitas
                                 source={require('../../../assets/imagens/foods/xcheese.png')}
                         />
                         <Legendas>Hambúrgueres</Legendas>
                     </Cartao>
+                    </ButtonReceitas>
+                    <ButtonReceitas activeOpacity={0.8} onPress={() => navigation.navigate(Receitas)}>
                     <Cartao>
                         <FoodsTipoReceitas
                                 source={require('../../../assets/imagens/foods/massas.png')}
                         />
                         <Legendas>Massas</Legendas>
                     </Cartao>
+                    </ButtonReceitas>
+                    <ButtonReceitas activeOpacity={0.8} onPress={() => navigation.navigate(Receitas)}>
                     <Cartao>
                         <FoodsTipoReceitas
                                 source={require('../../../assets/imagens/foods/bebidas.png')}
                         />
                         <Legendas>Bebidas</Legendas>
                     </Cartao>
+                    </ButtonReceitas>
+                    <ButtonReceitas activeOpacity={0.8} onPress={() => navigation.navigate(Receitas)}>
                     <Cartao>
                         <FoodsTipoReceitas
                                 source={require('../../../assets/imagens/foods/sorvete.png')}
                         />
                         <Legendas>Sorvetes</Legendas>
                     </Cartao>
+                    </ButtonReceitas>
+                    <ButtonReceitas activeOpacity={0.8} onPress={() => navigation.navigate(Receitas)}>
                     <Cartao>
                         <FoodsTipoReceitas
                                 source={require('../../../assets/imagens/foods/bolo.png')}
                         />
                         <Legendas>Sobremesas</Legendas>
                     </Cartao>
+                    </ButtonReceitas>
                 </ListTipoReceitas>
 
                 <TitleReceitasAgrado>
