@@ -41,17 +41,19 @@ export const Titulo = styled.Text`
 export const CartaoCategoria = styled.TouchableOpacity`
     background-color: #FAB111;
     height: 30px;
-    width: 110px;
+    width: 140px;
     border-radius: 8px;
-    padding: 5px;
     align-items: center;
-    justify-content: space-between;
     margin-right: 5px;
     margin-left: 5px;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: center;
 `;
 
 export const TextCartao = styled.Text`
-
+    align-items: center;
+    justify-content: center;
 `;
 
 export const BoxInput = styled.View`
@@ -108,6 +110,7 @@ export const BoxTextInfo = styled.View`
 export const TextInfo = styled.Text`
     font-size: 15px;
     font-weight: bold;
+    margin-bottom: 5px;
 `;
 
 export const BoxCategorias = styled.View`
@@ -117,4 +120,13 @@ export const BoxCategorias = styled.View`
 
 export const PaginaReceitas = styled.ScrollView`
 
+`;
+
+export const BotaoFavorito = styled.TouchableOpacity`
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
 `;

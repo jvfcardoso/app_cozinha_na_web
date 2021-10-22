@@ -19,11 +19,15 @@ import {
     TextInfo,
     Titulo,
     PaginaReceitas,
+    BotaoFavorito,
 } from './styles';
+import {Alert} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import Categorias from './FlatListCategorias';
+import Perfil from '../Perfil/perfilLogin';
 
-export default function Receitas() {
+export default function Receitas({navigation}) {
     return (
         <Container >
             <BoxLogo>
@@ -53,6 +57,9 @@ export default function Receitas() {
                         <CartaoCategoria activeOpacity={1}>
                             <TextCartao>
                                 {item.nome}
+                                {'  '}
+                                <FontAwesome5 name={item.icone} size={20} color="black" />
+
                             </TextCartao>
                         </CartaoCategoria>
                     )}
@@ -74,9 +81,16 @@ export default function Receitas() {
                         </BoxImagemReceita>
 
                         <BoxTextInfo>
-                            <TextInfo>{item.nomeReceita}{'\n'}</TextInfo>
-                            <TextInfo>Dificuldade: {item.dificuldade}{'\n'}</TextInfo>
-                            <TextInfo>Tempo de preparo: {item.tempoPreparo}{'\n'}</TextInfo>
+                            <TextInfo>{item.nomeReceita}</TextInfo>
+                            <TextInfo>Dificuldade: {item.dificuldade}</TextInfo>
+                            <TextInfo>Tempo de preparo: {item.tempoPreparo}</TextInfo>
+                            <BotaoFavorito
+                                activeOpacity={0.8}
+                                style={{ backgroundColor: item.uid % 2 == 0 ? '#FAB111' : '#FCF3C2'}}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para marcar como favorito')}}
+                            >
+                                <FontAwesome5 name="heart" size={22} color="black"/>
+                            </BotaoFavorito>
                         </BoxTextInfo>
                     </BoxReceitas>
                 )}
@@ -94,48 +108,55 @@ const dataMassas = [
         nomeReceita: 'Pizza de Mussarela',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
-        imagemReceita: require('../../../assets/imagens/foods/pizzaMussarela.jpg')    
+        imagemReceita: require('../../../assets/imagens/foods/pizzaMussarela.jpg'),
+        icone: "hamburger",
     },
     {
         uid: 2,
         nomeReceita: 'Pizza de Mussarela',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
-        imagemReceita: require('../../../assets/imagens/foods/frutas.jpg')    
+        imagemReceita: require('../../../assets/imagens/foods/frutas.jpg'),
+        icone: "hamburger"
     },
     {
         uid: 3,
         nomeReceita: 'Pizza de Mussarela',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
-        imagemReceita: require('../../../assets/imagens/foods/lasanha.png')    
+        imagemReceita: require('../../../assets/imagens/foods/lasanha.png'),
+        icone: "hamburger"
     },
     {
         uid: 4,
         nomeReceita: 'Pizza de Mussarela',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
-        imagemReceita: require('../../../assets/imagens/foods/x.png')    
+        imagemReceita: require('../../../assets/imagens/foods/x.png'),
+        icone: "hamburger"
     },
     {
         uid: 5,
         nomeReceita: 'Pizza de Mussarela',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
-        imagemReceita: require('../../../assets/imagens/foods/waffles.png')    
+        imagemReceita: require('../../../assets/imagens/foods/waffles.png'),
+        icone: "hamburger"
     },
     {
         uid: 6,
         nomeReceita: 'Pizza de Mussarela',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
-        imagemReceita: require('../../../assets/imagens/foods/massas.png')    
+        imagemReceita: require('../../../assets/imagens/foods/massas.png'),
+        icone: "hamburger"
     },
     {
         uid: 7,
         nomeReceita: 'Pizza de Mussarela',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
-        imagemReceita: require('../../../assets/imagens/foods/bolacha.png')    
+        imagemReceita: require('../../../assets/imagens/foods/bolacha.png'),
+        icone: "hamburger"
     }
 ]

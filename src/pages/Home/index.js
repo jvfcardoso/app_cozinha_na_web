@@ -21,6 +21,7 @@ import {
     ButtonReceitas,
 
  } from './styles';
+import {Alert} from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import Receitas from '../Receitas';
 
@@ -100,10 +101,16 @@ export default function Home({navigation}){
                             source={require('../../../assets/imagens/foods/sucoLaranja.png')}
                         />
                             <BoxButtons>
-                                <BoxBotaoShare activeOpacity={0.7}>
+                                <BoxBotaoShare
+                                    activeOpacity={0.7}
+                                    onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
+                                >
                                     <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
                                 </BoxBotaoShare>
-                                <BoxBotaoLike activeOpacity={0.7}>
+                                <BoxBotaoLike
+                                    activeOpacity={0.7}
+                                    onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
+                                >
                                     <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
                                 </BoxBotaoLike>
                             </BoxButtons>
@@ -113,10 +120,16 @@ export default function Home({navigation}){
                             source={require('../../../assets/imagens/foods/waffles.png')}
                         />
                         <BoxButtons>
-                            <BoxBotaoShare activeOpacity={0.7}>
+                            <BoxBotaoShare 
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
+                            >
                                 <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
                             </BoxBotaoShare>
-                            <BoxBotaoLike activeOpacity={0.7}>
+                            <BoxBotaoLike
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
+                            >
                                 <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
                             </BoxBotaoLike>
                         </BoxButtons>
@@ -126,10 +139,16 @@ export default function Home({navigation}){
                             source={require('../../../assets/imagens/foods/pastel.png')}
                         />
                         <BoxButtons>
-                            <BoxBotaoShare activeOpacity={0.7}>
+                            <BoxBotaoShare
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
+                            >
                                 <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
                             </BoxBotaoShare>
-                            <BoxBotaoLike activeOpacity={0.7}>
+                            <BoxBotaoLike
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
+                            >
                                 <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
                             </BoxBotaoLike>
                         </BoxButtons>
@@ -139,10 +158,16 @@ export default function Home({navigation}){
                             source={require('../../../assets/imagens/foods/feijoada.png')}
                         />
                         <BoxButtons>
-                            <BoxBotaoShare activeOpacity={0.7}>
+                            <BoxBotaoShare
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
+                            >
                                 <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
                             </BoxBotaoShare>
-                            <BoxBotaoLike activeOpacity={0.7}>
+                            <BoxBotaoLike
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
+                            >
                                 <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
                             </BoxBotaoLike>
                         </BoxButtons>
@@ -152,10 +177,16 @@ export default function Home({navigation}){
                             source={require('../../../assets/imagens/foods/milkshake.png')}
                         />
                         <BoxButtons>
-                            <BoxBotaoShare activeOpacity={0.7}>
+                            <BoxBotaoShare
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
+                            >
                                 <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
                             </BoxBotaoShare>
-                            <BoxBotaoLike activeOpacity={0.7}>
+                            <BoxBotaoLike
+                                activeOpacity={0.7}
+                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
+                            >
                                 <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
                             </BoxBotaoLike>
                         </BoxButtons>
