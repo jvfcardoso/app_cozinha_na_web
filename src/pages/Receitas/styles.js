@@ -57,16 +57,16 @@ export const TextCartao = styled.Text`
 `;
 
 export const BoxInput = styled.View`
+    background-color: #ffffff;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    padding: 10px 30px;
+    margin: 20px;
+    border-radius: 50px;
+    elevation: 15;
 `;
 
 export const Pesquisar = styled.TextInput`
-    margin-left: 10px;
-    padding-left: 5px;
-    border-width: 1px;
     border-radius: 8px;
     align-items: center;
     justify-content: center;

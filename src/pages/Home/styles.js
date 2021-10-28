@@ -54,12 +54,45 @@ export const ButtonReceitas = styled.TouchableOpacity`
 `;
 
 export const Cartao = styled.View`
-    width: 170px;
-    height: 185px;
-    background-color: #FCF3C2;
-    margin-left: 15px;
+    width: 220px;
+    background-color: #f4f4f4;
+    margin: 15px 0px 15px 15px;
     align-items: center;
-    border-radius: 10px;    
+    border-radius: 10px;
+    elevation: 8;
+    padding-bottom: 20px;   
+`;
+
+export const InformacaoCartao = styled.View`
+    width: 100%;
+    padding: 20px;
+`;
+
+export const TituloInformacaoCartao = styled.Text`
+    max-width: 170px;
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #DB9600;
+`;
+
+export const TipoInformacaoCartao = styled.Text`
+    font-size: 13px;
+    margin: 0 0 10px 0;
+    color: #00000080;
+`;
+
+export const TempoInformacaoCartao = styled.Text`
+    font-size: 11px;
+    color: #00000070;
+`;
+
+export const BotaoVerReceita = styled.TouchableOpacity`
+    width: 120px;
+    background-color: #FAB111;
+    text-align: center;
+    border-radius: 5px;
+    elevation: 2;
 `;
 
 export const Legendas = styled.Text`
@@ -81,14 +114,15 @@ export const ListReceitasAgrado = styled.ScrollView`
 `;
 
 export const FoodsReceitasAgrado = styled.Image`
-    width: 130px;
+    width: 100%;
     height: 145px;
+    border-radius: 10px;
 `;
 
 export const BoxButtons = styled.View`
     flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
+    margin-top: 15px;
+    
 `;
 
 export const Banner = styled.Image`
@@ -107,5 +141,5 @@ export const BoxBotaoShare = styled.TouchableOpacity`
 `;
 
 export const BoxBotaoLike = styled.TouchableOpacity`
-
+    margin-right: 20px;
 `;

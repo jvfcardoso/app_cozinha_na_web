@@ -5,7 +5,7 @@ import {MaterialCommunityIcons} from '@expo/vector-icons';
 export default function ButtonHome({icone, size}){
     return(
         <View style={styles.container}>
-            <MaterialCommunityIcons name={icone} size={size} color={'#121212'}/>
+            <MaterialCommunityIcons name={icone} size={size} color={'#ffffff'}/>
         </View>
     )
 }
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 15
+        marginBottom: 15,
+        elevation: 10,
     }
 })

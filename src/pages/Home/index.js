@@ -19,10 +19,14 @@ import {
     BoxBotaoShare,
     BoxBotaoLike,
     ButtonReceitas,
-
+    InformacaoCartao,
+    TituloInformacaoCartao,
+    TipoInformacaoCartao,
+    TempoInformacaoCartao,
+    BotaoVerReceita,
  } from './styles';
 import {Alert} from 'react-native';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
+import {FontAwesome5} from '@expo/vector-icons';
 import Receitas from '../Receitas';
 
 export default function Home({navigation}){
@@ -98,100 +102,64 @@ export default function Home({navigation}){
                 <ListReceitasAgrado  horizontal={true} showsHorizontalScrollIndicator={false}>
                     <Cartao>
                         <FoodsReceitasAgrado
-                            source={require('../../../assets/imagens/foods/sucoLaranja.png')}
+                            source={require('../../../assets/imagens/foods/pizzaMussarela.jpg')}
                         />
-                            <BoxButtons>
-                                <BoxBotaoShare
-                                    activeOpacity={0.7}
-                                    onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
-                                >
-                                    <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
-                                </BoxBotaoShare>
-                                <BoxBotaoLike
-                                    activeOpacity={0.7}
-                                    onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
-                                >
-                                    <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
-                                </BoxBotaoLike>
-                            </BoxButtons>
-                    </Cartao>
-                    <Cartao>
-                        <FoodsReceitasAgrado
-                            source={require('../../../assets/imagens/foods/waffles.png')}
-                        />
-                        <BoxButtons>
-                            <BoxBotaoShare 
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
-                            >
-                                <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
-                            </BoxBotaoShare>
-                            <BoxBotaoLike
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
-                            >
-                                <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
-                            </BoxBotaoLike>
-                        </BoxButtons>
-                    </Cartao>
-                    <Cartao>
-                        <FoodsReceitasAgrado
-                            source={require('../../../assets/imagens/foods/pastel.png')}
-                        />
-                        <BoxButtons>
-                            <BoxBotaoShare
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
-                            >
-                                <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
-                            </BoxBotaoShare>
-                            <BoxBotaoLike
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
-                            >
-                                <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
-                            </BoxBotaoLike>
-                        </BoxButtons>
-                    </Cartao>
-                    <Cartao>
-                        <FoodsReceitasAgrado
-                            source={require('../../../assets/imagens/foods/feijoada.png')}
-                        />
-                        <BoxButtons>
-                            <BoxBotaoShare
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
-                            >
-                                <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
-                            </BoxBotaoShare>
-                            <BoxBotaoLike
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
-                            >
-                                <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
-                            </BoxBotaoLike>
-                        </BoxButtons>
-                    </Cartao>
-                    <Cartao>
-                        <FoodsReceitasAgrado
-                            source={require('../../../assets/imagens/foods/milkshake.png')}
-                        />
-                        <BoxButtons>
-                            <BoxBotaoShare
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}
-                            >
-                                <MaterialCommunityIcons name="share-variant" size={24} color={'#121212'}/>
-                            </BoxBotaoShare>
-                            <BoxBotaoLike
-                                activeOpacity={0.7}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para curtir')}}
-                            >
-                                <MaterialCommunityIcons name="thumb-up" size={24} color={'#121212'}/>
-                            </BoxBotaoLike>
-                        </BoxButtons>
-                    </Cartao>
+                        
+                        <InformacaoCartao>
+                            <TituloInformacaoCartao>
+                                Pizza de Mussarela
+                            </TituloInformacaoCartao>
 
+                            <TipoInformacaoCartao>
+                                Massas
+                            </TipoInformacaoCartao>
+
+                            <TempoInformacaoCartao>
+                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 45min
+                            </TempoInformacaoCartao>
+
+
+                            <BoxButtons>
+                                <BoxBotaoLike onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para favoritar')}}>
+                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                </BoxBotaoLike>
+                                <BoxBotaoShare  onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para poder compartilhar')}}>
+                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
+                                </BoxBotaoShare>
+                            </BoxButtons>
+                        
+                        </InformacaoCartao>
+                    </Cartao>
+                    <Cartao>
+                        <FoodsReceitasAgrado
+                            source={require('../../../assets/imagens/foods/SALADA.jpg')}
+                        />
+
+                        <InformacaoCartao>
+                            <TituloInformacaoCartao>
+                                Salada de Vegetais
+                            </TituloInformacaoCartao>
+
+                            <TipoInformacaoCartao>
+                                Diet
+                            </TipoInformacaoCartao>
+
+                            <TempoInformacaoCartao>
+                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 25min
+                            </TempoInformacaoCartao>
+
+                            <BoxButtons>
+                                <BoxBotaoLike onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para favoritar')}}>
+                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                </BoxBotaoLike>
+                                <BoxBotaoShare  onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para poder compartilhar')}}>
+                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
+                                </BoxBotaoShare>
+                            </BoxButtons>
+                        
+                        </InformacaoCartao>
+                        
+                    </Cartao>
                 </ListReceitasAgrado>
         </Container>
     )

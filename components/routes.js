@@ -14,20 +14,21 @@ export default function Routes(){
     return(
             <Tab.Navigator
                 borderTopColor='transparent'
-                initialRouteName="Receitas"
+                initialRouteName="Home"
                 screenOptions={{
                     tabBarStyle:{
-                        backgroundColor: '#FCF3C2',
+                        minHeight: 65,
+                        backgroundColor: '#ffffff',
                         borderTopColor: 'transparent',
-                        paddingBottom: 5,
-                        paddingTop: 5,
+                        paddingBottom: 10,
+                        paddingTop: 10,
                     },
                     tabBarLabelStyle:{
-                        fontSize: 12
+                        fontSize: 10
                     },
         
-                    tabBarActiveTintColor: '#090909',
-                    tabBarInactiveTintColor: '#121212',
+                    tabBarActiveTintColor: '#FAB111',
+                    tabBarInactiveTintColor: '#0000005c',
                 }}
             >
                 <Tab.Screen
@@ -36,7 +37,7 @@ export default function Routes(){
                     options={{
                         headerShown:false,
                         tabBarIcon: ({focused}) => (
-                            <MaterialCommunityIcons name={focused ? "food-apple" : "food-apple-outline"} size={focused ? 30 : 26} color="#121212" />                    )
+                            <MaterialCommunityIcons name="food-apple-outline" size={focused ? 30 : 26}  color={focused ? "#FAB111" : "#0000005c"} />                    )
                     }}
                 />
                 <Tab.Screen
@@ -45,7 +46,7 @@ export default function Routes(){
                     options={{
                         headerShown:false,
                         tabBarIcon: ({focused}) => (
-                            <MaterialCommunityIcons name={focused ? "book" : "book-outline"} size={focused ? 30 : 26} color="#121212" />                    )
+                            <MaterialCommunityIcons name="book-outline" size={focused ? 30 : 26}  color={focused ? "#FAB111" : "#0000005c"} />                    )
                     }}
                 />
                 <Tab.Screen
@@ -65,7 +66,7 @@ export default function Routes(){
                     options={{
                         headerShown:false,
                         tabBarIcon: ({focused}) => (
-                            <MaterialCommunityIcons name={focused ? "information" : "information-outline"} size={focused ? 30 : 26} color="#121212" />                    )
+                            <MaterialCommunityIcons name="information-outline" size={focused ? 30 : 26}  color={focused ? "#FAB111" : "#0000005c"} />                    )
                     }}
                     
                 />
@@ -75,7 +76,7 @@ export default function Routes(){
                     options={{
                         headerShown:false,
                         tabBarIcon: ({focused}) => (
-                            <MaterialCommunityIcons name={focused ? "account" : "account-outline"} size={focused ? 30 : 26} color="#121212" />                    )
+                            <MaterialCommunityIcons name="account-outline" size={focused ? 30 : 26}  color={focused ? "#FAB111" : "#0000005c"} />                    )
                     }}
                     
                 />

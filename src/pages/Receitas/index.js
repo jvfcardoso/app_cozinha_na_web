@@ -46,56 +46,56 @@ export default function Receitas({navigation}) {
                 </IconePesquisar>
             </BoxInput>
 
-            <PaginaReceitas vertical={true}>
-            <BoxCategorias>
-                <Titulo>Categorias</Titulo>
+            <PaginaReceitas showsVerticalScrollIndicator={false}>
+                <BoxCategorias>
+                    <Titulo>Categorias</Titulo>
+                    <FlatList
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        data={Categorias}
+                        renderItem={({ item }) => (
+                            <CartaoCategoria activeOpacity={1}>
+                                <TextCartao>
+                                    {item.nome}
+                                    {'  '}
+                                    <FontAwesome5 name={item.icone} size={20} color="black" />
+
+                                </TextCartao>
+                            </CartaoCategoria>
+                        )}
+                        keyExtractor={(item) => {item.uid}}
+                    />
+                </BoxCategorias>
+
+
                 <FlatList
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    data={Categorias}
+                    style={{ marginBottom: 35, marginTop: 10 }}
+                    showsVerticalScrollIndicator={false}
+                    data={dataMassas}
                     renderItem={({ item }) => (
-                        <CartaoCategoria activeOpacity={1}>
-                            <TextCartao>
-                                {item.nome}
-                                {'  '}
-                                <FontAwesome5 name={item.icone} size={20} color="black" />
+                        <BoxReceitas activeOpacity={1} style={{ backgroundColor: item.uid % 2 == 0 ? '#FCF3C2' : '#FAB111' }}>
+                            <BoxImagemReceita>
+                                <ImagemReceita
+                                    source={item.imagemReceita}
+                                />
+                            </BoxImagemReceita>
 
-                            </TextCartao>
-                        </CartaoCategoria>
+                            <BoxTextInfo>
+                                <TextInfo>{item.nomeReceita}</TextInfo>
+                                <TextInfo>Dificuldade: {item.dificuldade}</TextInfo>
+                                <TextInfo>Tempo de preparo: {item.tempoPreparo}</TextInfo>
+                                <BotaoFavorito
+                                    activeOpacity={0.8}
+                                    style={{ backgroundColor: item.uid % 2 == 0 ? '#FAB111' : '#FCF3C2'}}
+                                    onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para marcar como favorito')}}
+                                >
+                                    <FontAwesome5 name="heart" size={22} color="black"/>
+                                </BotaoFavorito>
+                            </BoxTextInfo>
+                        </BoxReceitas>
                     )}
-                    keyExtractor={(item) => {item.uid}}
+                    keyExtractor={(item) => { item.uid }}
                 />
-            </BoxCategorias>
-
-
-            <FlatList
-                style={{ marginBottom: 35, marginTop: 10 }}
-                showsVerticalScrollIndicator={false}
-                data={dataMassas}
-                renderItem={({ item }) => (
-                    <BoxReceitas activeOpacity={1} style={{ backgroundColor: item.uid % 2 == 0 ? '#FCF3C2' : '#FAB111' }}>
-                        <BoxImagemReceita>
-                            <ImagemReceita
-                                source={item.imagemReceita}
-                            />
-                        </BoxImagemReceita>
-
-                        <BoxTextInfo>
-                            <TextInfo>{item.nomeReceita}</TextInfo>
-                            <TextInfo>Dificuldade: {item.dificuldade}</TextInfo>
-                            <TextInfo>Tempo de preparo: {item.tempoPreparo}</TextInfo>
-                            <BotaoFavorito
-                                activeOpacity={0.8}
-                                style={{ backgroundColor: item.uid % 2 == 0 ? '#FAB111' : '#FCF3C2'}}
-                                onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para marcar como favorito')}}
-                            >
-                                <FontAwesome5 name="heart" size={22} color="black"/>
-                            </BotaoFavorito>
-                        </BoxTextInfo>
-                    </BoxReceitas>
-                )}
-                keyExtractor={(item) => { item.uid }}
-            />
             </PaginaReceitas>
 
         </Container>
