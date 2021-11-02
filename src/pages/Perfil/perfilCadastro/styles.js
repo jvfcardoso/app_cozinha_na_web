@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.KeyboardAvoidingView`
     flex: 1;
-    background-color: #FCFCFC;
+    background-color: #F5F4DC;
     justify-content: center;
     align-items: center;
     padding-top: 120px;
@@ -13,7 +13,6 @@ export const Container = styled.KeyboardAvoidingView`
 export const Logo = styled.Image`
     width: 120px;
     height: 120px;
-
 `;
 
 export const  BoxInput = styled.View`

@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.KeyboardAvoidingView`
     flex: 1;
-    background-color: #FCFCFC;
+    background-color: #F5F4DC;
     justify-content: center;
     align-items: center;
     padding-top: 120px;

@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
     flex: 1;
-    background-color: #FCFCFC;
+    background-color: #F5F4DC;
 `;
 
 export const Titulo = styled.Text`
@@ -41,11 +41,12 @@ export const Banner = styled.Image`
 
 export const BoxQuemSomos = styled.View`
     width: 90%;
-    background-color: #FCF3C2;
+    background-color: #f4f4f4;
     padding-bottom: 10px;
     margin-top: 20px;
     border-radius: 8px;
     padding: 15px;
+    elevation: 8;
 `;
 
 export const TextQuemSomos = styled.Text`
@@ -54,13 +55,13 @@ export const TextQuemSomos = styled.Text`
 
 export const BoxComo = styled.View`
     margin-top: 20px;
-    background-color: #FCF3C2;
+    background-color: #f4f4f4;
     width: 90%;
     padding: 15px;
     border-radius: 8px;
     padding-bottom: 10px;
     margin-bottom: 30px;
-    
+    elevation: 8;
 `;
 
 export const TextComo = styled.Text`

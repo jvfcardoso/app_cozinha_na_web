@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
     flex: 1;
-    background-color: #FCFCFC;
+    background-color: #F5F4DC;
 `;
 
 
@@ -46,14 +46,16 @@ export const TitleTipoReceitas = styled.Text`
 
 export const FoodsTipoReceitas = styled.Image`
     width: 150px;
-    height: 175px;
+    height: 150px;
+    margin-bottom: -30px;
 `;
 
-export const ButtonReceitas = styled.TouchableOpacity`
-
+export const ButtonIcon = styled.TouchableOpacity`
+    align-self: flex-end;
+    margin: 0 25px 10px;
 `;
 
-export const Cartao = styled.View`
+export const Cartao = styled.TouchableOpacity`
     width: 220px;
     background-color: #f4f4f4;
     margin: 15px 0px 15px 15px;
@@ -61,6 +63,15 @@ export const Cartao = styled.View`
     border-radius: 10px;
     elevation: 8;
     padding-bottom: 20px;   
+`;
+
+export const CartaoReceitas = styled.View`
+    width: 220px;
+    background-color: #f4f4f4;
+    margin: 15px 0px 15px 15px;
+    align-items: center;
+    border-radius: 10px;
+    elevation: 8;
 `;
 
 export const InformacaoCartao = styled.View`
@@ -87,17 +98,12 @@ export const TempoInformacaoCartao = styled.Text`
     color: #00000070;
 `;
 
-export const BotaoVerReceita = styled.TouchableOpacity`
-    width: 120px;
-    background-color: #FAB111;
-    text-align: center;
-    border-radius: 5px;
-    elevation: 2;
-`;
-
 export const Legendas = styled.Text`
-    font-size: 15px;
-    margin-top: -35px;
+    margin: 15px 0 5px 20px;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 20px;
+    color: #DB9600;
 `;
 
 export const TitleReceitasAgrado = styled.Text`

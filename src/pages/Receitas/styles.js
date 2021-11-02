@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
     flex: 1;
-    background-color: #FCFCFC;
+    background-color: #F5F4DC;
 `;
 
 export const BoxLogo = styled.View`
@@ -91,6 +91,7 @@ export const BoxReceitas = styled.TouchableOpacity`
     align-items: center;
     padding-left: 20px;
     padding-right: 30px;
+    elevation: 8;
 `;
 
 export const ImagemReceita = styled.Image`
@@ -116,6 +117,10 @@ export const TextInfo = styled.Text`
 export const BoxCategorias = styled.View`
     margin-right: 10px;
     margin-left: 10px;
+`;
+
+export const Categorias = styled.ScrollView`
+
 `;
 
 export const PaginaReceitas = styled.ScrollView`

@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
     flex: 1;
-    background-color: #FCFCFC;
+    background-color: #F5F4DC;
 `;
 
 export const Header = styled.View`
@@ -31,12 +31,13 @@ export const TextButtonCursos = styled.Text`
 
 export const BoxProposta = styled.View`
     width: 90%;
-    background-color: #FCF3C2;
+    background-color: #f4f4f4;
     padding: 15px;
     margin-top: 20px;
     border-radius: 8px;
     margin-left: 25px;
     margin-bottom: 20px;
+    elevation: 8;
 `;
 
 export const TextoProposta = styled.Text`
@@ -52,13 +53,14 @@ export const Titulo = styled.Text`
 
 export const CartaoCursos = styled.View`
     width: 350px;
-    background-color: #FCF3C2;
+    background-color: #f4f4f4;
     padding: 15px;
     margin-bottom: 30px;
     border-radius: 8px;
     justify-content: center;
     align-items: center;
     margin-right: 20px;
+    elevation: 8;
 `;
 
 export const BoxCursos = styled.ScrollView`

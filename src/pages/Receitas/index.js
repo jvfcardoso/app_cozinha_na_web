@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Alert } from 'react-native';
 import {
     BoxCategorias,
     BoxImagemReceita,
@@ -8,23 +8,22 @@ import {
     BoxReceitas,
     BoxTextInfo,
     ButtonReceitas,
-    CartaoCategoria,
     Container,
     IconePesquisar,
     ImagemReceita,
     Logo,
     Pesquisar,
     TextButton,
-    TextCartao,
+    Categorias,
     TextInfo,
     Titulo,
     PaginaReceitas,
     BotaoFavorito,
+    CartaoCategoria,
+    TextCartao,
 } from './styles';
-import {Alert} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import Categorias from './FlatListCategorias';
 import Perfil from '../Perfil/perfilLogin';
 
 export default function Receitas({navigation}) {
@@ -46,25 +45,42 @@ export default function Receitas({navigation}) {
                 </IconePesquisar>
             </BoxInput>
 
-            <PaginaReceitas showsVerticalScrollIndicator={false}>
+            <PaginaReceitas>
                 <BoxCategorias>
                     <Titulo>Categorias</Titulo>
-                    <FlatList
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                        data={Categorias}
-                        renderItem={({ item }) => (
-                            <CartaoCategoria activeOpacity={1}>
-                                <TextCartao>
-                                    {item.nome}
-                                    {'  '}
-                                    <FontAwesome5 name={item.icone} size={20} color="black" />
-
-                                </TextCartao>
-                            </CartaoCategoria>
-                        )}
-                        keyExtractor={(item) => {item.uid}}
-                    />
+                    <Categorias horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <CartaoCategoria activeOpacity={0.8}>
+                            <TextCartao>
+                                Massas
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8}>
+                            <TextCartao>
+                                Sorvetes
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8}>
+                            <TextCartao>
+                                Sobremesas
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8}>
+                            <TextCartao>
+                                Bolos
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8}>
+                            <TextCartao>
+                                Hambúrgueres
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8}>
+                            <TextCartao>
+                                Bebidas
+                            </TextCartao>
+                        </CartaoCategoria>
+                        
+                    </Categorias>
                 </BoxCategorias>
 
 
@@ -73,11 +89,11 @@ export default function Receitas({navigation}) {
                     showsVerticalScrollIndicator={false}
                     data={dataMassas}
                     renderItem={({ item }) => (
-                        <BoxReceitas activeOpacity={1} style={{ backgroundColor: item.uid % 2 == 0 ? '#FCF3C2' : '#FAB111' }}>
+                        <BoxReceitas activeOpacity={0.8} style={{ backgroundColor: item.uid % 2 == 0 ? '#FCF3C2' : '#FAB111' }}>
                             <BoxImagemReceita>
                                 <ImagemReceita
                                     source={item.imagemReceita}
-                                />
+                                    />
                             </BoxImagemReceita>
 
                             <BoxTextInfo>
@@ -85,17 +101,17 @@ export default function Receitas({navigation}) {
                                 <TextInfo>Dificuldade: {item.dificuldade}</TextInfo>
                                 <TextInfo>Tempo de preparo: {item.tempoPreparo}</TextInfo>
                                 <BotaoFavorito
-                                    activeOpacity={0.8}
+                                    activeOpacity={0.7}
                                     style={{ backgroundColor: item.uid % 2 == 0 ? '#FAB111' : '#FCF3C2'}}
                                     onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para marcar como favorito')}}
-                                >
+                                    >
                                     <FontAwesome5 name="heart" size={22} color="black"/>
                                 </BotaoFavorito>
                             </BoxTextInfo>
                         </BoxReceitas>
                     )}
                     keyExtractor={(item) => { item.uid }}
-                />
+                    />
             </PaginaReceitas>
 
         </Container>
