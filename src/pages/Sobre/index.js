@@ -57,7 +57,6 @@ export default function Sobre(){
                     surpreender até mesmo os paladares mais
                     exigentes.
                 </TextQuemSomos>
-
             </BoxQuemSomos>
 
             <BoxComo>

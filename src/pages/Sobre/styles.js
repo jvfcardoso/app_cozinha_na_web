@@ -51,6 +51,7 @@ export const BoxQuemSomos = styled.View`
 
 export const TextQuemSomos = styled.Text`
     text-align: justify;
+    font-size: 15px;
 `;
 
 export const BoxComo = styled.View`
@@ -66,7 +67,7 @@ export const BoxComo = styled.View`
 
 export const TextComo = styled.Text`
     text-align: justify;
-
+    font-size: 15px;
 `;
 
 export const BoxSobre = styled.View`

@@ -21,10 +21,12 @@ import {
     BotaoFavorito,
     CartaoCategoria,
     TextCartao,
+    TitleInfo,
+
 } from './styles';
+import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import Perfil from '../Perfil/perfilLogin';
 
 export default function Receitas({navigation}) {
     return (
@@ -45,7 +47,7 @@ export default function Receitas({navigation}) {
                 </IconePesquisar>
             </BoxInput>
 
-            <PaginaReceitas>
+            <PaginaReceitas showsVerticalScrollIndicator={false}>
                 <BoxCategorias>
                     <Titulo>Categorias</Titulo>
                     <Categorias horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -89,7 +91,11 @@ export default function Receitas({navigation}) {
                     showsVerticalScrollIndicator={false}
                     data={dataMassas}
                     renderItem={({ item }) => (
-                        <BoxReceitas activeOpacity={0.8} style={{ backgroundColor: item.uid % 2 == 0 ? '#FCF3C2' : '#FAB111' }}>
+                        <BoxReceitas
+                        activeOpacity={0.8}
+                        style={{ backgroundColor: item.uid % 2 == 0 ? '#FCF3C2' : '#FAB111' }}
+                        onPress={() => navigation.navigate('TelaReceitas')}
+                        >
                             <BoxImagemReceita>
                                 <ImagemReceita
                                     source={item.imagemReceita}
@@ -97,9 +103,10 @@ export default function Receitas({navigation}) {
                             </BoxImagemReceita>
 
                             <BoxTextInfo>
-                                <TextInfo>{item.nomeReceita}</TextInfo>
-                                <TextInfo>Dificuldade: {item.dificuldade}</TextInfo>
-                                <TextInfo>Tempo de preparo: {item.tempoPreparo}</TextInfo>
+                                <TitleInfo>{item.nomeReceita}</TitleInfo>
+                                <TextInfo><MaterialIcons name="category" size={15} color="black" />  {item.tipoReceita}</TextInfo>
+                                <TextInfo>{item.iconeDificuldade}{'  '}{item.dificuldade}</TextInfo>
+                                <TextInfo><FontAwesome5 name="hourglass-start" size={15} color="black" />  {item.tempoPreparo}</TextInfo>
                                 <BotaoFavorito
                                     activeOpacity={0.7}
                                     style={{ backgroundColor: item.uid % 2 == 0 ? '#FAB111' : '#FCF3C2'}}
@@ -118,61 +125,81 @@ export default function Receitas({navigation}) {
     )
 }
 
+
+function TelaReceitas({navigation}){
+    return(
+        <Container>
+            <Titulo>Teste</Titulo>
+        </Container>
+    )
+}
+
 const dataMassas = [
     {
         uid: 1,
         nomeReceita: 'Pizza de Mussarela',
+        tipoReceita: 'Massas',
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
         imagemReceita: require('../../../assets/imagens/foods/pizzaMussarela.jpg'),
-        icone: "hamburger",
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
     },
     {
         uid: 2,
-        nomeReceita: 'Pizza de Mussarela',
+        nomeReceita: 'Salada de Frutas',
+        tipoReceita: 'Saladas',
         dificuldade: 'Fácil',
-        tempoPreparo: '45min',
+        tempoPreparo: '30min',
         imagemReceita: require('../../../assets/imagens/foods/frutas.jpg'),
-        icone: "hamburger"
+        iconeDificuldade: <FontAwesome name="star-half-empty" size={15} color="black" />
     },
     {
         uid: 3,
-        nomeReceita: 'Pizza de Mussarela',
-        dificuldade: 'Fácil',
-        tempoPreparo: '45min',
+        nomeReceita: 'Lasanha',
+        tipoReceita: 'Massas',
+        dificuldade: 'Médio',
+        tempoPreparo: '60min',
         imagemReceita: require('../../../assets/imagens/foods/lasanha.png'),
-        icone: "hamburger"
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
+
     },
     {
         uid: 4,
-        nomeReceita: 'Pizza de Mussarela',
+        nomeReceita: 'X-Burguer',
+        tipoReceita: 'Hambúrgueres',
         dificuldade: 'Fácil',
-        tempoPreparo: '45min',
+        tempoPreparo: '25min',
         imagemReceita: require('../../../assets/imagens/foods/x.png'),
-        icone: "hamburger"
+        iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
     },
     {
         uid: 5,
-        nomeReceita: 'Pizza de Mussarela',
+        nomeReceita: 'Waffles',
+        tipoReceita: 'Massas',
         dificuldade: 'Fácil',
-        tempoPreparo: '45min',
+        tempoPreparo: '30min',
         imagemReceita: require('../../../assets/imagens/foods/waffles.png'),
-        icone: "hamburger"
+        iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
+
     },
     {
         uid: 6,
-        nomeReceita: 'Pizza de Mussarela',
-        dificuldade: 'Fácil',
+        nomeReceita: 'Macarrão com Molho Vermelho',
+        tipoReceita: 'Massas',
+        dificuldade: 'Médio',
         tempoPreparo: '45min',
         imagemReceita: require('../../../assets/imagens/foods/massas.png'),
-        icone: "hamburger"
+        iconeDificuldade: <FontAwesome name="star-half-empty" size={15} color="black" />
+
     },
     {
         uid: 7,
-        nomeReceita: 'Pizza de Mussarela',
+        nomeReceita: 'Cookies',
+        tipoReceita: 'Sobremesas',
         dificuldade: 'Fácil',
-        tempoPreparo: '45min',
+        tempoPreparo: '50min',
         imagemReceita: require('../../../assets/imagens/foods/bolacha.png'),
-        icone: "hamburger"
+        iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
+
     }
 ]

@@ -62,7 +62,7 @@ export default function Home({navigation}){
                                         source={require('../../../assets/imagens/foods/xcheese.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
-                                    <Ionicons name="arrow-redo" size={30} color="#DB9600" />
+                                    <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />
                                 </ButtonIcon>
                         </CartaoReceitas>
 
@@ -72,7 +72,7 @@ export default function Home({navigation}){
                                         source={require('../../../assets/imagens/foods/massas.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
-                                    <Ionicons name="arrow-redo" size={30} color="#DB9600" />
+                                    <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />
                                 </ButtonIcon>
                         </CartaoReceitas>
 
@@ -82,7 +82,7 @@ export default function Home({navigation}){
                                         source={require('../../../assets/imagens/foods/bebidas.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
-                                    <Ionicons name="arrow-redo" size={30} color="#DB9600" />
+                                    <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />
                                 </ButtonIcon>
                         </CartaoReceitas>
 
@@ -92,7 +92,7 @@ export default function Home({navigation}){
                                         source={require('../../../assets/imagens/foods/sorvete.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
-                                    <Ionicons name="arrow-redo" size={30} color="#DB9600" />
+                                    <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />
                                 </ButtonIcon>
                         </CartaoReceitas>
 
@@ -102,7 +102,7 @@ export default function Home({navigation}){
                                         source={require('../../../assets/imagens/foods/bolo.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
-                                    <Ionicons name="arrow-redo" size={30} color="#DB9600" />
+                                    <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />
                                 </ButtonIcon>
                         </CartaoReceitas>
                 </ListTipoReceitas>

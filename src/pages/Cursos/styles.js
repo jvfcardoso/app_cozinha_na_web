@@ -42,6 +42,7 @@ export const BoxProposta = styled.View`
 
 export const TextoProposta = styled.Text`
     text-align: justify;
+    font-size: 15px;
 `;
 
 export const Titulo = styled.Text`
@@ -69,6 +70,7 @@ export const BoxCursos = styled.ScrollView`
 
 export const DescricaoCurso = styled.Text`
     text-align: justify;
+    font-size: 15px;
 `;
 
 export const ImagemCurso = styled.Image`

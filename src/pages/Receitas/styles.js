@@ -85,7 +85,7 @@ export const BoxReceitas = styled.TouchableOpacity`
     align-self:flex-end;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    margin-top: 15px;
+    margin: 5px 0 20px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -105,18 +105,26 @@ export const BoxImagemReceita = styled.View`
 `;
 
 export const BoxTextInfo = styled.View`
-
+    width: 230px;
+    padding: 0 30px 0 20px;
+    
 `;
 
 export const TextInfo = styled.Text`
-    font-size: 15px;
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 2px;
+`;
+
+export const TitleInfo = styled.Text`
     font-weight: bold;
+    font-size: 15px;
     margin-bottom: 5px;
 `;
 
 export const BoxCategorias = styled.View`
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 0 10px 10px 10px;
+
 `;
 
 export const Categorias = styled.ScrollView`

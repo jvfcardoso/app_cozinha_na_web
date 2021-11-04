@@ -1,10 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { TelaLogin } from '../components/CustomNavigator';
+import { RoutesReceitas, TelaLogin } from '../components/CustomNavigator';
 import Home from '../src/pages/Home';
 import Cursos from '../src/pages/Cursos';
-import Receitas from '../src/pages/Receitas';
 import Sobre from '../src/pages/Sobre';
 import ButtonHome from '../components/buttonHome';
 
@@ -14,7 +13,7 @@ export default function Routes(){
     return(
             <Tab.Navigator
                 borderTopColor='transparent'
-                initialRouteName="Home"
+                initialRouteName="Receitas"
                 screenOptions={{
                     tabBarStyle:{
                         minHeight: 65,
@@ -33,7 +32,7 @@ export default function Routes(){
             >
                 <Tab.Screen
                     name="Receitas"
-                    component={Receitas}
+                    component={RoutesReceitas}
                     options={{
                         headerShown:false,
                         tabBarIcon: ({focused}) => (

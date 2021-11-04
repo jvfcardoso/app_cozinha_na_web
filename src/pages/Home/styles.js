@@ -33,7 +33,8 @@ export const TextButton = styled.Text`
 `;
 
 export const ListTipoReceitas = styled.ScrollView`
-    margin-right: 15px;
+    margin: 0 15px 5px 0;
+
 `;
 
 export const TitleTipoReceitas = styled.Text`
@@ -109,9 +110,8 @@ export const Legendas = styled.Text`
 export const TitleReceitasAgrado = styled.Text`
     font-size: 20px;
     font-weight: bold;
-    margin-left: 15px;
-    margin-bottom: 10px;
-    margin-top: 50px;
+    margin: 30px 0 10px 15px;
+
 `;
 
 export const ListReceitasAgrado = styled.ScrollView`
