@@ -89,7 +89,7 @@ export default function Receitas({navigation}) {
                 <FlatList
                     style={{ marginBottom: 35, marginTop: 10 }}
                     showsVerticalScrollIndicator={false}
-                    data={dataMassas}
+                    data={dataReceitas}
                     renderItem={({ item }) => (
                         <BoxReceitas
                         activeOpacity={0.8}
@@ -134,7 +134,7 @@ function TelaReceitas({navigation}){
     )
 }
 
-const dataMassas = [
+const dataReceitas = [
     {
         uid: 1,
         nomeReceita: 'Pizza de Mussarela',
@@ -148,10 +148,10 @@ const dataMassas = [
         uid: 2,
         nomeReceita: 'Salada de Frutas',
         tipoReceita: 'Saladas',
-        dificuldade: 'Fácil',
+        dificuldade: 'Difícil',
         tempoPreparo: '30min',
         imagemReceita: require('../../../assets/imagens/foods/frutas.jpg'),
-        iconeDificuldade: <FontAwesome name="star-half-empty" size={15} color="black" />
+        iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
     },
     {
         uid: 3,
@@ -160,7 +160,7 @@ const dataMassas = [
         dificuldade: 'Médio',
         tempoPreparo: '60min',
         imagemReceita: require('../../../assets/imagens/foods/lasanha.png'),
-        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
+        iconeDificuldade: <FontAwesome name="star-half-empty" size={15} color="black" />
 
     },
     {
@@ -170,7 +170,7 @@ const dataMassas = [
         dificuldade: 'Fácil',
         tempoPreparo: '25min',
         imagemReceita: require('../../../assets/imagens/foods/x.png'),
-        iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
     },
     {
         uid: 5,
@@ -179,7 +179,7 @@ const dataMassas = [
         dificuldade: 'Fácil',
         tempoPreparo: '30min',
         imagemReceita: require('../../../assets/imagens/foods/waffles.png'),
-        iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
 
     },
     {
@@ -199,7 +199,7 @@ const dataMassas = [
         dificuldade: 'Fácil',
         tempoPreparo: '50min',
         imagemReceita: require('../../../assets/imagens/foods/bolacha.png'),
-        iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
 
     }
 ]

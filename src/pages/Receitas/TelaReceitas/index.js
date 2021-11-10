@@ -5,58 +5,97 @@ import {
     Logo,
     ButtonHome,
     TextButton,
-    ScrollReceita,
     TituloReceita,
     BannerReceita,
     Banner,
-    BoxExemplos,
-    ImagensExemplos,
-    BoxImagemExemplos,
+    TituloIngredientes,
+    ListaIngredientes,
+    ViewReceitas,
+    TituloModoPreparo,
+    ModoPreparo,
+    BoxIngredientes,
+    BoxModoPreparo,
 } from './styles';
 import { Ionicons } from '@expo/vector-icons';
+import { FlatList } from 'react-native';
+import {Info} from './InfoReceitas';
 
 export default function TelaReceitas({navigation}){
     return(
             <Container>
                 <BoxLogo>
                     <Logo source={require('../../../../assets/imagens/logo.png')}/>
-                    <ButtonHome onPress={() => navigation.navigate('Receitas')}>
+                    <ButtonHome 
+                        onPress={() => navigation.navigate('Receitas')}
+                        activeOpacity={0.8}    
+                    >
                         <TextButton>
                             <Ionicons name="arrow-undo" size={24} color="black" /> Voltar</TextButton>    
                     </ButtonHome>        
                 </BoxLogo>
 
-            <ScrollReceita>
-                <TituloReceita>Pizza de Mussarela</TituloReceita>
-                    <BannerReceita>
+                <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={Info}
+                    keyExtractor={(item) => {item.uid}}
+                    renderItem={({item}) => (
+                    <ViewReceitas>
+                        <TituloReceita>
+                            {item.nomeReceita}
+                        </TituloReceita>
+                        <BannerReceita
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        >
                         <Banner
-                            source={require('../../../../assets/imagens/receitas/pizzaMussarela/passo4.jpg')}
-                            resizeMode="stretch"
+                                source={item.ImagemBanner4}
+                                resizeMode="stretch"
                         />
-                    </BannerReceita>
-                <BoxExemplos>
-                    <BoxImagemExemplos activeOpacity={0.9}>
-                        <ImagensExemplos
-                            source={require('../../../../assets/imagens/receitas/pizzaMussarela/passo1.jpg')}
-                            resizeMode="stretch"
+                        <Banner
+                                source={item.ImagemBanner1}
+                                resizeMode="stretch"
+
                         />
-                    </BoxImagemExemplos>
-                    <BoxImagemExemplos activeOpacity={0.9}>
-                        <ImagensExemplos
-                            source={require('../../../../assets/imagens/receitas/pizzaMussarela/passo2.jpg')}
-                            resizeMode="stretch"
+                        <Banner
+                                source={item.ImagemBanner2}
+                                resizeMode="stretch"
+
                         />
-                    </BoxImagemExemplos>
-                    <BoxImagemExemplos activeOpacity={0.9}>
-                        <ImagensExemplos
-                            source={require('../../../../assets/imagens/receitas/pizzaMussarela/passo3.jpg')}
-                            resizeMode="stretch"
+                        <Banner
+                                source={item.ImagemBanner3}
+                                resizeMode="stretch"
+
                         />
-                    </BoxImagemExemplos>
-                </BoxExemplos>
+                        </BannerReceita>
+    
+                        <TituloIngredientes>
+                            Ingredientes
+                        </TituloIngredientes>
+                        
+                        <BoxIngredientes>
+                            <ListaIngredientes>
+                                {item.ingredientes}
+                            </ListaIngredientes>
+                        </BoxIngredientes>
+
+                        <TituloModoPreparo>
+                            Modo de Preparo
+                        </TituloModoPreparo>
+
+                        <BoxModoPreparo>
+                            <ModoPreparo>
+                                {item.modoPreparo}
+                            </ModoPreparo>
+                        </BoxModoPreparo>
+
+                    </ViewReceitas>
 
 
-            </ScrollReceita>
+                    )}
+                />
+
+
+
 
             </Container>
 

@@ -11,6 +11,10 @@ export const Logo = styled.Image`
     
 `;
 
+export const ViewReceitas = styled.View`
+
+`;
+
 export const BoxLogo = styled.View`
     margin-left: 20px;
     flex-direction: row;
@@ -30,9 +34,6 @@ export const TextButton = styled.Text`
 
 `;
 
-export const ScrollReceita = styled.ScrollView`
-
-`;
 
 export const TituloReceita = styled.Text`
     font-size: 25px;
@@ -40,33 +41,54 @@ export const TituloReceita = styled.Text`
     margin-left: 20px;
 `;
 
-export const BannerReceita = styled.View`
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+export const TituloIngredientes = styled.Text`
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 20px;
 `;
+
+export const BoxIngredientes = styled.View`
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0 15px 20px;
+    border-width: 1px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #ffffff60;
+    `;
+
+export const ListaIngredientes = styled.Text`
+    font-size: 15px;
+    `;
+
+export const BannerReceita = styled.ScrollView`
+    margin: 10px;
+    `;
 
 export const Banner = styled.Image`
-    width: 95%;
-    height: 200px;
+    width: 350px;
+    height: 250px;
+    margin: 10px 5px 10px 5px;
     border-radius: 5px;
-    
+    `;
+
+
+export const TituloModoPreparo = styled.Text`
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 20px;
+    `;
+
+export const BoxModoPreparo = styled.View`
+    margin: 10px 0 30px 20px;
+    border-width: 1px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
+    width: 90%;
+    background-color: #ffffff60;
 `;
 
-export const BoxExemplos = styled.View`
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 10px;
-`;
-
-export const ImagensExemplos = styled.Image`
-    width: 120px;
-    height: 80px;
-    border-radius: 10px;
-`;
-
-export const BoxImagemExemplos = styled.TouchableOpacity`
-
+export const ModoPreparo = styled.Text`
+    font-size: 15px;
 `;
