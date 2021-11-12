@@ -47,7 +47,7 @@ export default function Home({navigation}){
                 </BoxLogo>
                 <BoxBanner>
                     <Banner
-                        source={require('../../../assets/imagens/bannerHome.jpg')}
+                        source={require('../../../assets/imagens/banners/bannerHome.jpg')}
                     />
                 </BoxBanner>
 

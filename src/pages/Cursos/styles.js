@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
     flex: 1;
-    background-color: #F5F4DC;
+    background-color: #F5F1F1;
 `;
 
 export const Header = styled.View`
@@ -25,13 +25,13 @@ export const ButtonCursos  = styled.View`
 `;
 
 export const TextButtonCursos = styled.Text`
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 `;
 
 export const BoxProposta = styled.View`
     width: 90%;
-    background-color: #f4f4f4;
+    background-color: #FCF3C2;
     padding: 15px;
     margin-top: 20px;
     border-radius: 8px;
@@ -54,7 +54,7 @@ export const Titulo = styled.Text`
 
 export const CartaoCursos = styled.View`
     width: 350px;
-    background-color: #f4f4f4;
+    background-color: #FCF3C2;
     padding: 15px;
     margin-bottom: 30px;
     border-radius: 8px;
@@ -93,4 +93,22 @@ export const ButtonSaibaMais = styled.TouchableOpacity`
 
 export const TextoButtonSaibaMais = styled.Text`
     font-weight: bold;
+`;
+
+export const BoxBanner = styled.View`
+    width: 90%;
+    height: 105px;
+    background-color: #631831;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    align-self: center;
+`;
+
+export const Banner = styled.Image`
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    
 `;

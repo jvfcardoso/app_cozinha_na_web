@@ -20,6 +20,15 @@ export function TelaLogin({navigation}){
             <Stack.Screen
                 name="Cadastro"
                 component={Cadastro}
+                options={{
+                    headerStyle:{
+                        backgroundColor: '#fab111',
+                        
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleAlign: 'center',
+                    cardShadowEnabled: true
+                }}
             />
         </Stack.Navigator>
     )

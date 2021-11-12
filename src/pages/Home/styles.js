@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
     flex: 1;
-    background-color: #F5F4DC;
+    background-color: #F5F1F1;
 `;
 
 
@@ -58,7 +58,7 @@ export const ButtonIcon = styled.TouchableOpacity`
 
 export const Cartao = styled.TouchableOpacity`
     width: 220px;
-    background-color: #f4f4f4;
+    background-color: #FCF3C2;
     margin: 15px 0px 15px 15px;
     align-items: center;
     border-radius: 10px;
@@ -68,7 +68,7 @@ export const Cartao = styled.TouchableOpacity`
 
 export const CartaoReceitas = styled.View`
     width: 220px;
-    background-color: #f4f4f4;
+    background-color: #FCF3C2;
     margin: 15px 0px 15px 15px;
     align-items: center;
     border-radius: 10px;

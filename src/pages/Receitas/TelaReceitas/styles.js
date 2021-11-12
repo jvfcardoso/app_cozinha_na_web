@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #F5F4DC;
+    background-color: #F5F1F1;
 `;
 
 export const Logo = styled.Image`
@@ -54,7 +54,7 @@ export const BoxIngredientes = styled.View`
     border-width: 1px;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #ffffff60;
+    background-color: #FCF3C2;
     `;
 
 export const ListaIngredientes = styled.Text`
@@ -86,7 +86,7 @@ export const BoxModoPreparo = styled.View`
     border-bottom-right-radius: 15px;
     padding: 10px;
     width: 90%;
-    background-color: #ffffff60;
+    background-color: #FCF3C2;
 `;
 
 export const ModoPreparo = styled.Text`

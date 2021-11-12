@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
     flex: 1;
-    background-color: #F5F4DC;
+    background-color: #F5F1F1;
 `;
 
 export const BoxLogo = styled.View`
@@ -26,7 +26,7 @@ export const ButtonReceitas = styled.View`
 
 export const TextButton = styled.Text`
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
 `;
 
 

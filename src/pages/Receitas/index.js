@@ -109,10 +109,9 @@ export default function Receitas({navigation}) {
                                 <TextInfo><FontAwesome5 name="hourglass-start" size={15} color="black" />  {item.tempoPreparo}</TextInfo>
                                 <BotaoFavorito
                                     activeOpacity={0.7}
-                                    style={{ backgroundColor: item.uid % 2 == 0 ? '#FAB111' : '#FCF3C2'}}
                                     onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para marcar como favorito')}}
                                     >
-                                    <FontAwesome5 name="heart" size={22} color="black"/>
+                                    <FontAwesome5 name="heart" size={22} color="#000"/>
                                 </BotaoFavorito>
                             </BoxTextInfo>
                         </BoxReceitas>

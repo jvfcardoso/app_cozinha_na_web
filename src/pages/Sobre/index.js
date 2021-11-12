@@ -23,7 +23,6 @@ export default function Sobre(){
                     resizeMode="stretch"
                     source={require('../../../assets/imagens/logo.png')}
                 />
-
                 <BoxSobre>
                     <TextSobre>
                         Sobre
@@ -33,9 +32,11 @@ export default function Sobre(){
 
             <BoxBanner>
                 <Banner
-                    source={require('../../../assets/imagens/bannerSobre.jpg')}
+                    resizeMode="cover"
+                    source={require('../../../assets/imagens/banners/bannerSobre.jpg')}
                 />
-
+            </BoxBanner>
+            
             <BoxQuemSomos>
                 <Titulo>Quem somos</Titulo>
                 <TextQuemSomos>
@@ -76,7 +77,6 @@ export default function Sobre(){
                     algo inovador no mercado brasileiro.
                 </TextComo>
             </BoxComo>
-            </BoxBanner>
 
         </Container>
     )

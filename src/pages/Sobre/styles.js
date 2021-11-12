@@ -3,7 +3,8 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
     flex: 1;
-    background-color: #F5F4DC;
+    background-color: #F5F1F1;
+    
 `;
 
 export const Titulo = styled.Text`
@@ -35,18 +36,18 @@ export const Banner = styled.Image`
     width: 90%;
     height: 100px;
     border-radius: 10px;
-    align-items: center;
-    justify-content: center;
+
 `;
 
 export const BoxQuemSomos = styled.View`
     width: 90%;
-    background-color: #f4f4f4;
+    background-color: #FCF3C2;
     padding-bottom: 10px;
     margin-top: 20px;
     border-radius: 8px;
     padding: 15px;
     elevation: 8;
+    align-self: center;
 `;
 
 export const TextQuemSomos = styled.Text`
@@ -56,13 +57,14 @@ export const TextQuemSomos = styled.Text`
 
 export const BoxComo = styled.View`
     margin-top: 20px;
-    background-color: #f4f4f4;
+    background-color: #FCF3C2;
     width: 90%;
     padding: 15px;
     border-radius: 8px;
     padding-bottom: 10px;
     margin-bottom: 30px;
     elevation: 8;
+    align-self: center;
 `;
 
 export const TextComo = styled.Text`
@@ -75,6 +77,6 @@ export const BoxSobre = styled.View`
 `;
 
 export const TextSobre = styled.Text`
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 `;

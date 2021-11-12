@@ -14,6 +14,8 @@ import {
     TextoButtonSaibaMais,
     CartaoCursos,
     BoxCursos,
+    BoxBanner,
+    Banner,
 
  } from './styles';
 import Perfil from '../Perfil/perfilLogin';
@@ -30,6 +32,13 @@ export default function Cursos({navigation}){
                    <TextButtonCursos>Cursos</TextButtonCursos>
                </ButtonCursos>
             </Header>
+
+            <BoxBanner>
+                <Banner
+                    resizeMode="contain"
+                    source={require('../../../assets/imagens/banners/bannerCursos.png')}
+                />
+            </BoxBanner>
 
             <BoxProposta>
                 <Titulo>Proposta</Titulo>
