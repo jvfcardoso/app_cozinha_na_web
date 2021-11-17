@@ -35,7 +35,7 @@ export const BoxProposta = styled.View`
     padding: 15px;
     margin-top: 20px;
     border-radius: 8px;
-    margin-left: 25px;
+    align-self: center;
     margin-bottom: 20px;
     elevation: 8;
 `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {
     Text,
     Alert
@@ -12,10 +12,26 @@ import {
     Input,
     TextoBotao,
  } from './styles';
+import {Modalize} from 'react-native-modalize';
+import modalLogin from '../../../../components/modais/modalLogin';
 
 export default function Perfil({navigation}){
+    const modalizeRef = useRef(null);
+
+    function onOpen(){
+        modalizeRef.current?.open();
+    }
+
     return(
         <Container>
+            <Modalize
+                ref={modalizeRef}
+                snapPoint={200}
+                modalHeight={200}
+            >
+                <modalLogin/>
+            </Modalize>
+
                 <Logo
                     source={require('../../../../assets/imagens/logo.png')}
                 />
@@ -33,7 +49,7 @@ export default function Perfil({navigation}){
                     secureTextEntry={true}
                 />
 
-                <BotaoLogin activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em desenvolvimento!')}>
+                <BotaoLogin activeOpacity={0.7} onPress={onOpen}>
                     <TextoBotao>
                         Entrar
                     </TextoBotao>
