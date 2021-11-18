@@ -1,7 +1,6 @@
 import React, {useRef} from 'react';
 import {
     Text,
-    Alert
  } from 'react-native';
 import {
     Container,
@@ -13,7 +12,7 @@ import {
     TextoBotao,
  } from './styles';
 import {Modalize} from 'react-native-modalize';
-import modalLogin from '../../../../components/modais/modalLogin';
+import ModalLogin from '../../../../components/modais/modalLogin';
 
 export default function Perfil({navigation}){
     const modalizeRef = useRef(null);
@@ -29,7 +28,7 @@ export default function Perfil({navigation}){
                 snapPoint={200}
                 modalHeight={200}
             >
-                <modalLogin/>
+                <ModalLogin/>
             </Modalize>
 
                 <Logo

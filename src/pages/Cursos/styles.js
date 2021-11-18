@@ -31,7 +31,7 @@ export const TextButtonCursos = styled.Text`
 
 export const BoxProposta = styled.View`
     width: 90%;
-    background-color: #FCF3C2;
+    background-color: #FBF6E3;
     padding: 15px;
     margin-top: 20px;
     border-radius: 8px;
@@ -54,7 +54,7 @@ export const Titulo = styled.Text`
 
 export const CartaoCursos = styled.View`
     width: 350px;
-    background-color: #FCF3C2;
+    background-color: #FBF6E3;
     padding: 15px;
     margin-bottom: 30px;
     border-radius: 8px;

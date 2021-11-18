@@ -41,7 +41,7 @@ export const Banner = styled.Image`
 
 export const BoxQuemSomos = styled.View`
     width: 90%;
-    background-color: #FCF3C2;
+    background-color: #FBF6E3;
     padding-bottom: 10px;
     margin-top: 20px;
     border-radius: 8px;
@@ -57,7 +57,7 @@ export const TextQuemSomos = styled.Text`
 
 export const BoxComo = styled.View`
     margin-top: 20px;
-    background-color: #FCF3C2;
+    background-color: #FBF6E3;
     width: 90%;
     padding: 15px;
     border-radius: 8px;

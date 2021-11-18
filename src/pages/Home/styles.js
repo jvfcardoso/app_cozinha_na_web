@@ -58,7 +58,7 @@ export const ButtonIcon = styled.TouchableOpacity`
 
 export const Cartao = styled.TouchableOpacity`
     width: 220px;
-    background-color: #FCF3C2;
+    background-color: #FBF6E3;
     margin: 15px 0px 15px 15px;
     align-items: center;
     border-radius: 10px;
@@ -68,7 +68,7 @@ export const Cartao = styled.TouchableOpacity`
 
 export const CartaoReceitas = styled.View`
     width: 220px;
-    background-color: #FCF3C2;
+    background-color: #FBF6E3;
     margin: 15px 0px 15px 15px;
     align-items: center;
     border-radius: 10px;

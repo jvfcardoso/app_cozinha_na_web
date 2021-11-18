@@ -93,7 +93,7 @@ export default function Receitas({navigation}) {
                     renderItem={({ item }) => (
                         <BoxReceitas
                         activeOpacity={0.8}
-                        style={{ backgroundColor: item.uid % 2 == 0 ? '#FCF3C2' : '#FAB111' }}
+                        style={{ backgroundColor: item.uid % 2 == 0 ? '#FBF6E3' : '#FAB111' }}
                         onPress={() => navigation.navigate('TelaReceitas')}
                         >
                             <BoxImagemReceita>

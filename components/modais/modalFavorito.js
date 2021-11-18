@@ -2,29 +2,30 @@ import React from 'react';
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function ModalLogin(){
+export default function ModalFavorito(){
     return(
         <View style={styles.container}>
-            <Ionicons name="warning-outline" size={35} color="#FAB111" />
-            <Text style={styles.Texto}>Ops, está funcionalidade ainda está em desenvolvimento!</Text>
+            <Text style={styles.texto}>
+                <Ionicons name="warning-outline" size={24} color="black" />
+                Acesse sua conta para favoritar
+            </Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container:{
-        flex: 1,
-        height: 200,
+        flex:1,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignContent: 'center',
     },
-    Texto:{
+    texto:{
+        fontWeight: "700",
         fontSize: 20,
         textAlign: 'center',
-        fontWeight: "700"
     }
 })

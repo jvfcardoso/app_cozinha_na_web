@@ -1,5 +1,4 @@
-import React from 'react';
-import {Alert} from 'react-native';
+import React, {useRef} from 'react';
 import {
     Container,
     Logo,
@@ -9,10 +8,25 @@ import {
     TextoBotao,
     BoxTelSenha
  } from './styles';
+ import {Modalize} from 'react-native-modalize';
+ import ModalLogin from '../../../../components/modais/modalLogin';
 
  export default function Perfil(){
+     const modalizeRef = useRef(null);
+
+     function onOpen(){
+        modalizeRef.current?.open();
+     }
+
     return(
         <Container>
+            <Modalize
+                ref={modalizeRef}
+                snapPoint={200}
+                modalHeight={200}
+            >
+                <ModalLogin/>
+            </Modalize>
                 <Logo
                     source={require('../../../../assets/imagens/logo.png')}
                     />
@@ -54,7 +68,7 @@ import {
                         />
                 </BoxTelSenha>
 
-                <BotaoCadastro activeOpacity={0.7} onPress={() => Alert.alert('Aviso', 'Funcionalidade em desenvolvimento!')}>
+                <BotaoCadastro activeOpacity={0.7} onPress={onOpen}>
                     <TextoBotao>
                         Cadastrar
                     </TextoBotao>

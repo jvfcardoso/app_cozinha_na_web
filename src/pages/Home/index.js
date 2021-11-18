@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {
     Container,
     TitleTipoReceitas,
@@ -30,11 +30,26 @@ import {Alert} from 'react-native';
 import {FontAwesome5} from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import Receitas from '../Receitas';
+import {Modalize} from 'react-native-modalize';
+import ModalFavorito from '../../../components/modais/modalFavorito';
+
 
 
 export default function Home({navigation}){
+    const modalizeRef = useRef(null);
+
+    function onOpen(){
+        modalizeRef.current?.open();
+    }
     return(
         <Container showsVerticalScrollIndicator={false}>
+            <Modalize
+                ref={modalizeRef}
+                snapPoint={200}
+                modalHeight={200}
+            >
+                <ModalFavorito/>
+            </Modalize>
                 <BoxLogo>
                     <Logo
                         source={require('../../../assets/imagens/logo.png')}
@@ -51,6 +66,105 @@ export default function Home({navigation}){
                     />
                 </BoxBanner>
 
+
+                <TitleReceitasAgrado>
+                    Receitas do seu agrado
+                </TitleReceitasAgrado>
+
+                <ListReceitasAgrado  horizontal={true} showsHorizontalScrollIndicator={false}>
+                    <Cartao activeOpacity={0.9}>
+                        <FoodsReceitasAgrado
+                            source={require('../../../assets/imagens/foods/pizzaMussarela.jpg')}
+                        />
+                        
+                        <InformacaoCartao>
+                            <TituloInformacaoCartao>
+                                Pizza de Mussarela
+                            </TituloInformacaoCartao>
+
+                            <TipoInformacaoCartao>
+                                Massas
+                            </TipoInformacaoCartao>
+
+                            <TempoInformacaoCartao>
+                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 45min
+                            </TempoInformacaoCartao>
+
+
+                            <BoxButtons>
+                                <BoxBotaoLike activeOpacity={0.8} onPress={() => navigation.navigate('Perfil'), onOpen}>
+                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                </BoxBotaoLike>
+                                <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}>
+                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
+                                </BoxBotaoShare>
+                            </BoxButtons>
+                        
+                        </InformacaoCartao>
+                    </Cartao>
+                    <Cartao activeOpacity={0.9}>
+                        <FoodsReceitasAgrado
+                            source={require('../../../assets/imagens/foods/SALADA.jpg')}
+                        />
+
+                        <InformacaoCartao>
+                            <TituloInformacaoCartao>
+                                Salada de Vegetais
+                            </TituloInformacaoCartao>
+
+                            <TipoInformacaoCartao>
+                                Diet
+                            </TipoInformacaoCartao>
+
+                            <TempoInformacaoCartao>
+                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 25min
+                            </TempoInformacaoCartao>
+
+                            <BoxButtons>
+                                <BoxBotaoLike activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), onOpen}}>
+                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                </BoxBotaoLike>
+                                <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}>
+                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
+                                </BoxBotaoShare>
+                            </BoxButtons>
+                        
+                        </InformacaoCartao>
+                        
+                    </Cartao>
+                    <Cartao activeOpacity={0.9}>
+                        <FoodsReceitasAgrado
+                            resizeMode="contain"
+                            source={require('../../../assets/imagens/foods/frango.jpg')}
+                        />
+
+                        <InformacaoCartao>
+                            <TituloInformacaoCartao>
+                                Frango a passarinho
+                            </TituloInformacaoCartao>
+
+                            <TipoInformacaoCartao>
+                                Assados
+                            </TipoInformacaoCartao>
+
+                            <TempoInformacaoCartao>
+                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 30min
+                            </TempoInformacaoCartao>
+
+                            <BoxButtons>
+                                <BoxBotaoLike activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), onOpen}}>
+                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                </BoxBotaoLike>
+                                <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para poder compartilhar')}}>
+                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
+                                </BoxBotaoShare>
+                            </BoxButtons>
+                        
+                        </InformacaoCartao>
+                        
+                    </Cartao>
+                </ListReceitasAgrado>
+                
                     <TitleTipoReceitas>
                         Tipos de Receitas
                     </TitleTipoReceitas>
@@ -106,104 +220,6 @@ export default function Home({navigation}){
                                 </ButtonIcon>
                         </CartaoReceitas>
                 </ListTipoReceitas>
-
-                <TitleReceitasAgrado>
-                    Receitas do seu agrado
-                </TitleReceitasAgrado>
-
-                <ListReceitasAgrado  horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <Cartao activeOpacity={0.9}>
-                        <FoodsReceitasAgrado
-                            source={require('../../../assets/imagens/foods/pizzaMussarela.jpg')}
-                        />
-                        
-                        <InformacaoCartao>
-                            <TituloInformacaoCartao>
-                                Pizza de Mussarela
-                            </TituloInformacaoCartao>
-
-                            <TipoInformacaoCartao>
-                                Massas
-                            </TipoInformacaoCartao>
-
-                            <TempoInformacaoCartao>
-                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 45min
-                            </TempoInformacaoCartao>
-
-
-                            <BoxButtons>
-                                <BoxBotaoLike activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para favoritar')}}>
-                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
-                                </BoxBotaoLike>
-                                <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para poder compartilhar')}}>
-                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
-                                </BoxBotaoShare>
-                            </BoxButtons>
-                        
-                        </InformacaoCartao>
-                    </Cartao>
-                    <Cartao activeOpacity={0.9}>
-                        <FoodsReceitasAgrado
-                            source={require('../../../assets/imagens/foods/SALADA.jpg')}
-                        />
-
-                        <InformacaoCartao>
-                            <TituloInformacaoCartao>
-                                Salada de Vegetais
-                            </TituloInformacaoCartao>
-
-                            <TipoInformacaoCartao>
-                                Diet
-                            </TipoInformacaoCartao>
-
-                            <TempoInformacaoCartao>
-                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 25min
-                            </TempoInformacaoCartao>
-
-                            <BoxButtons>
-                                <BoxBotaoLike activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para favoritar')}}>
-                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
-                                </BoxBotaoLike>
-                                <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para poder compartilhar')}}>
-                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
-                                </BoxBotaoShare>
-                            </BoxButtons>
-                        
-                        </InformacaoCartao>
-                        
-                    </Cartao>
-                    <Cartao activeOpacity={0.9}>
-                        <FoodsReceitasAgrado
-                            resizeMode="contain"
-                            source={require('../../../assets/imagens/foods/frango.jpg')}
-                        />
-
-                        <InformacaoCartao>
-                            <TituloInformacaoCartao>
-                                Frango a passarinho
-                            </TituloInformacaoCartao>
-
-                            <TipoInformacaoCartao>
-                                Assados
-                            </TipoInformacaoCartao>
-
-                            <TempoInformacaoCartao>
-                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 30min
-                            </TempoInformacaoCartao>
-
-                            <BoxButtons>
-                                <BoxBotaoLike activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para favoritar')}}>
-                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
-                                </BoxBotaoLike>
-                                <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para poder compartilhar')}}>
-                                    <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
-                                </BoxBotaoShare>
-                            </BoxButtons>
-                        
-                        </InformacaoCartao>
-                        
-                    </Cartao>
-                </ListReceitasAgrado>
         </Container>
     )
 }
