@@ -4,14 +4,14 @@ import {
     Text,
     StyleSheet,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import {FontAwesome5} from '@expo/vector-icons';
 
 export default function ModalFavorito(){
     return(
         <View style={styles.container}>
             <Text style={styles.texto}>
-                <Ionicons name="warning-outline" size={24} color="black" />
-                Acesse sua conta para favoritar
+                <FontAwesome5 name="heart" size={22} color="#DB9600" />{'\n'}
+                Adicionado aos favoritos!
             </Text>
         </View>
     )
@@ -19,13 +19,14 @@ export default function ModalFavorito(){
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        flex: 1,
+        height: 200,
         justifyContent: 'center',
-        alignContent: 'center',
+        alignItems: 'center',
     },
     texto:{
-        fontWeight: "700",
         fontSize: 20,
         textAlign: 'center',
+        fontWeight: "700"
     }
 })
