@@ -3,27 +3,33 @@ import { NavigationContainer } from '@react-navigation/native';
 import Routes from './components/routes';
 import { StatusBar } from 'expo-status-bar';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import {View, Text, Image, StyleSheet} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity
+} from 'react-native';
 
 const slides = [
   {
     key: '1',
     title: 'Bem-vindo ao Cozinha na Web',
     text: 'Onde aprender a cozinhar se torna divertido e interativo, independente de sua idade',
-    image: require('./assets/imagens/slider/2.png'),
+    image: require('./assets/imagens/slider/gif1.gif'),
   },
   {
     key: '2',
     title: 'Culinária saudável para todos',
     text: 'Prepare receitas deliciosas e saudáveis para si ou para quem ama no conforto de sua casa',
-    image: require('./assets/imagens/slider/1.png'),
+    image: require('./assets/imagens/slider/gif2.gif'),
   },
   {
     key: '3',
-    title: 'Receitas para todos',
-    text: 'Pensado na praticidade, qualquer um pode desfrutar do prazer de cozinhar o que gosta',
-    image: require('./assets/imagens/slider/3.png'),
+    title: 'Variedade de receitas',
+    text: 'Encontre uma diversidade de receitas que irá agradar os mais diversos paladares',
+    image: require('./assets/imagens/slider/gif3.gif'),
   },
 
 ]
@@ -37,7 +43,7 @@ function renderSlides({item}){
       <Image
         source={item.image}
         style={{
-          resizeMode: 'cover',
+          resizeMode: 'contain',
           height:'73%',
           width: '100%',
         }}
@@ -83,8 +89,14 @@ function renderSlides({item}){
         width: 30,
       }}
       renderNextButton={() => <MaterialIcons name="navigate-next" size={30} color="#FAB111" />}
-      renderDoneButton={() => <Text style={styles.botaoAcesso}>Acessar</Text>}
-      onDone={() => setShowHome(true)}
+      renderDoneButton={() => 
+      <TouchableOpacity 
+        style={styles.botaoAcesso}
+        activeOpacity={0.8}
+        onPress={() => setShowHome(true)}
+      >
+        <Text style={styles.textoBotao}>Acessar</Text>
+      </TouchableOpacity>}
     />
     )
   }
@@ -94,13 +106,16 @@ function renderSlides({item}){
 const styles = StyleSheet.create({
   botaoAcesso:{
     backgroundColor: '#FAB111',
-    borderRadius: 5,
-    width: 70,
-    height: 30,
-    textAlign: 'center',
+    borderRadius: 15,
+    width: 100,
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 5,
-    fontWeight: 'bold'
+    padding: 5,
+  },
+  textoBotao:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    letterSpacing: 1,
   }
 })

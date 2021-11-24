@@ -135,7 +135,7 @@ function TelaReceitas({navigation}){
 
 const dataReceitas = [
     {
-        uid: 1,
+        uid: '1',
         nomeReceita: 'Pizza de Mussarela',
         tipoReceita: 'Massas',
         dificuldade: 'Fácil',
@@ -144,7 +144,7 @@ const dataReceitas = [
         iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
     },
     {
-        uid: 2,
+        uid: '2',
         nomeReceita: 'Salada de Frutas',
         tipoReceita: 'Saladas',
         dificuldade: 'Difícil',
@@ -153,7 +153,7 @@ const dataReceitas = [
         iconeDificuldade: <FontAwesome name="star" size={15} color="black" />
     },
     {
-        uid: 3,
+        uid: '3',
         nomeReceita: 'Lasanha',
         tipoReceita: 'Massas',
         dificuldade: 'Médio',
@@ -163,7 +163,7 @@ const dataReceitas = [
 
     },
     {
-        uid: 4,
+        uid: '4',
         nomeReceita: 'X-Burguer',
         tipoReceita: 'Hambúrgueres',
         dificuldade: 'Fácil',
@@ -172,7 +172,7 @@ const dataReceitas = [
         iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
     },
     {
-        uid: 5,
+        uid: '5',
         nomeReceita: 'Waffles',
         tipoReceita: 'Massas',
         dificuldade: 'Fácil',
@@ -182,7 +182,7 @@ const dataReceitas = [
 
     },
     {
-        uid: 6,
+        uid: '6',
         nomeReceita: 'Macarrão com Molho Vermelho',
         tipoReceita: 'Massas',
         dificuldade: 'Médio',
@@ -192,7 +192,7 @@ const dataReceitas = [
 
     },
     {
-        uid: 7,
+        uid: '7',
         nomeReceita: 'Cookies',
         tipoReceita: 'Sobremesas',
         dificuldade: 'Fácil',
