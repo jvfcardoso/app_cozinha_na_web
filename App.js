@@ -35,7 +35,7 @@ const slides = [
 ]
 
 export default function App({navigation}) {
-  const [showHome, setShowHome] = useState(false);
+  const [showHome, setShowHome] = useState(true);
 
 function renderSlides({item}){
   return(

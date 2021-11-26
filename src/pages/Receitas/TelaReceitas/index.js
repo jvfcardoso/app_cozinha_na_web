@@ -1,10 +1,6 @@
 import React from 'react';
 import {
     Container,
-    BoxLogo,
-    Logo,
-    ButtonHome,
-    TextButton,
     TituloReceita,
     BannerReceita,
     Banner,
@@ -16,23 +12,12 @@ import {
     BoxIngredientes,
     BoxModoPreparo,
 } from './styles';
-import { Ionicons } from '@expo/vector-icons';
 import { FlatList } from 'react-native';
 import {Info} from './InfoReceitas';
 
 export default function TelaReceitas({navigation}){
     return(
             <Container>
-                <BoxLogo>
-                    <Logo source={require('../../../../assets/imagens/logo.png')}/>
-                    <ButtonHome 
-                        onPress={() => navigation.navigate('Receitas')}
-                        activeOpacity={0.8}    
-                    >
-                        <TextButton>
-                            <Ionicons name="arrow-undo" size={24} color="black" /> Voltar</TextButton>    
-                    </ButtonHome>        
-                </BoxLogo>
 
                 <FlatList
                     showsVerticalScrollIndicator={false}
@@ -89,15 +74,8 @@ export default function TelaReceitas({navigation}){
                         </BoxModoPreparo>
 
                     </ViewReceitas>
-
-
                     )}
                 />
-
-
-
-
             </Container>
-
     )
 }

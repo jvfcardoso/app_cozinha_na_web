@@ -1,18 +1,15 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { FlatList, Alert } from 'react-native';
 import {
     BoxCategorias,
     BoxImagemReceita,
-    BoxInput,
     BoxLogo,
     BoxReceitas,
     BoxTextInfo,
     ButtonReceitas,
     Container,
-    IconePesquisar,
     ImagemReceita,
     Logo,
-    Pesquisar,
     TextButton,
     Categorias,
     TextInfo,
@@ -24,13 +21,97 @@ import {
     TitleInfo,
 
 } from './styles';
+import {
+    TituloReceita,
+    BannerReceita,
+    Banner,
+    TituloIngredientes,
+    ListaIngredientes,
+    ViewReceitas,
+    TituloModoPreparo,
+    ModoPreparo,
+    BoxIngredientes,
+    BoxModoPreparo,
+} from '../Receitas/TelaReceitas/styles';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import {Modalize} from 'react-native-modalize';
+import {Info} from '../Receitas/TelaReceitas/InfoReceitas';
 
 export default function Receitas({navigation}) {
+    const modalizeRef = useRef(null);
+
+    function onOpen(){
+        modalizeRef.current?.open();
+    }
     return (
         <Container >
+            <Modalize
+                ref={modalizeRef}
+                snapPoint={800}
+                withOverlay={false}
+            >
+                <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={Info}
+                    keyExtractor={(item) => {item.uid}}
+                    renderItem={({item}) => (
+                        <ViewReceitas>
+                            <BannerReceita
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                            >
+                            <Banner
+                                    source={item.ImagemBanner4}
+                                    resizeMode="stretch"
+                                    />
+                            <Banner
+                                    source={item.ImagemBanner1}
+                                    resizeMode="stretch"
+                                    
+                            />
+                            <Banner
+                                    source={item.ImagemBanner2}
+                                    resizeMode="stretch"
+                                    
+                                    />
+                            <Banner
+                                    source={item.ImagemBanner3}
+                                    resizeMode="stretch"
+                                    
+                                    />
+                            </BannerReceita>
+        
+                            <TituloReceita>
+                                {item.nomeReceita}
+                            </TituloReceita>
+
+                            <TituloIngredientes>
+                                Ingredientes
+                            </TituloIngredientes>
+                            
+                            <BoxIngredientes>
+                                <ListaIngredientes>
+                                    {item.ingredientes}
+                                </ListaIngredientes>
+                            </BoxIngredientes>
+
+                            <TituloModoPreparo>
+                                Modo de Preparo
+                            </TituloModoPreparo>
+
+                            <BoxModoPreparo>
+                                <ModoPreparo>
+                                    {item.modoPreparo}
+                                </ModoPreparo>
+                            </BoxModoPreparo>
+
+                        </ViewReceitas>
+                    )}
+                />
+            </Modalize>
+
             <BoxLogo>
                 <Logo
                     source={require('../../../assets/imagens/logo.png')}
@@ -39,13 +120,6 @@ export default function Receitas({navigation}) {
                     <TextButton>Receitas</TextButton>
                 </ButtonReceitas>
             </BoxLogo>
-
-            <BoxInput>
-                <Pesquisar placeholder="Strogonoff de Frango" />
-                <IconePesquisar activeOpacity={0.7}>
-                    <FontAwesome name="search" size={24} color="#000" />
-                </IconePesquisar>
-            </BoxInput>
 
             <PaginaReceitas showsVerticalScrollIndicator={false}>
                 <BoxCategorias>
@@ -94,7 +168,7 @@ export default function Receitas({navigation}) {
                         <BoxReceitas
                         activeOpacity={0.8}
                         style={{ backgroundColor: item.uid % 2 == 0 ? '#FBF6E3' : '#FAB111' }}
-                        onPress={() => navigation.navigate('TelaReceitas')}
+                        onPress={() => onOpen()}
                         >
                             <BoxImagemReceita>
                                 <ImagemReceita
@@ -120,15 +194,6 @@ export default function Receitas({navigation}) {
                     />
             </PaginaReceitas>
 
-        </Container>
-    )
-}
-
-
-function TelaReceitas({navigation}){
-    return(
-        <Container>
-            <Titulo>Teste</Titulo>
         </Container>
     )
 }

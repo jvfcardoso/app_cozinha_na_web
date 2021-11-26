@@ -56,28 +56,6 @@ export const TextCartao = styled.Text`
     justify-content: center;
 `;
 
-export const BoxInput = styled.View`
-    background-color: #ffffff;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 30px;
-    margin: 20px;
-    border-radius: 50px;
-    elevation: 15;
-`;
-
-export const Pesquisar = styled.TextInput`
-    border-radius: 8px;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    height: 30px;
-`;
-
-export const IconePesquisar = styled.TouchableOpacity`
-
-`;
-
 export const BoxReceitas = styled.TouchableOpacity`
     background-color: #FAB111;
     width: 90%;
