@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import { FlatList, Alert } from 'react-native';
 import {
     BoxCategorias,
@@ -42,14 +42,29 @@ import {Info} from '../Receitas/TelaReceitas/InfoReceitas';
 export default function Receitas({navigation}) {
     const modalizeRef = useRef(null);
 
-    function onOpen(){
+    let [ nome, setNome ] = useState('');
+    let [ imagem, setImagem ] = useState('');
+    let [ ingredientes, setIngredientes ] = useState('');
+    let [ modoPreparo, setModoPreparo ] = useState('');
+    
+    
+    function alterarReceita( imagemReceita, nomeReceita, ingredientes, modoPreparo) {
+        
+        setNome(nomeReceita);
+        setImagem(imagemReceita);
+        setIngredientes(ingredientes);
+        setModoPreparo(modoPreparo);
+
         modalizeRef.current?.open();
+
     }
+
     return (
         <Container >
             <Modalize
                 ref={modalizeRef}
-                snapPoint={800}
+                snapPoint={850}
+                modalHeight={850}
                 withOverlay={false}
             >
                 <FlatList
@@ -59,32 +74,18 @@ export default function Receitas({navigation}) {
                     renderItem={({item}) => (
                         <ViewReceitas>
                             <BannerReceita
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
                             >
                             <Banner
-                                    source={item.ImagemBanner4}
-                                    resizeMode="stretch"
-                                    />
-                            <Banner
-                                    source={item.ImagemBanner1}
-                                    resizeMode="stretch"
-                                    
+                                source={imagem}
+                                resizeMode="stretch"
                             />
-                            <Banner
-                                    source={item.ImagemBanner2}
-                                    resizeMode="stretch"
-                                    
-                                    />
-                            <Banner
-                                    source={item.ImagemBanner3}
-                                    resizeMode="stretch"
-                                    
-                                    />
+                            
                             </BannerReceita>
         
-                            <TituloReceita>
-                                {item.nomeReceita}
+                            <TituloReceita>                              
+                                    {nome}
                             </TituloReceita>
 
                             <TituloIngredientes>
@@ -93,7 +94,7 @@ export default function Receitas({navigation}) {
                             
                             <BoxIngredientes>
                                 <ListaIngredientes>
-                                    {item.ingredientes}
+                                    {ingredientes}
                                 </ListaIngredientes>
                             </BoxIngredientes>
 
@@ -103,7 +104,7 @@ export default function Receitas({navigation}) {
 
                             <BoxModoPreparo>
                                 <ModoPreparo>
-                                    {item.modoPreparo}
+                                    {modoPreparo}
                                 </ModoPreparo>
                             </BoxModoPreparo>
 
@@ -168,7 +169,7 @@ export default function Receitas({navigation}) {
                         <BoxReceitas
                         activeOpacity={0.8}
                         style={{ backgroundColor: item.uid % 2 == 0 ? '#FBF6E3' : '#FAB111' }}
-                        onPress={() => onOpen()}
+                        onPress={() => alterarReceita(item.imagemReceita, item.nomeReceita , item.ingredientes, item.modoPreparo)}
                         >
                             <BoxImagemReceita>
                                 <ImagemReceita
@@ -206,7 +207,9 @@ const dataReceitas = [
         dificuldade: 'Fácil',
         tempoPreparo: '45min',
         imagemReceita: require('../../../assets/imagens/foods/pizzaMussarela.jpg'),
-        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />,
+        ingredientes: '• 1 Colher de (chá)\n• 1 Caixa de Molho de Tomate\n• 500g Farinha de Trigo\n• ½ Xicara de Óleo\n• 1 Colher de Sal\n• 200g Mussarela\n• 200ml Leite\n• 200ml Água\n• 1 Tomate\n• 1 Cebola\n• Fermento Biologico',
+        modoPreparo: 'Disolva a água, o leite e o fermento biologico em fogo baixo;\n\nColoque a mistura em uma tijela junto com o sal e o óleo;\n\nApós misturar jogue calmamente a farinha de trigo até a massa parar de grudar;\n\nDepois de preparar a massa deixe ela descansar por 45 minutos em uma tijela fechada;\n\nEstique a massa e coloque os ingredintes;\n\nColoque por 25 minutos no forno;\n\nSirva-se;',
     },
     {
         uid: '2',

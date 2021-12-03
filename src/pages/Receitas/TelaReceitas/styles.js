@@ -39,10 +39,9 @@ export const BannerReceita = styled.ScrollView`
 `;
 
 export const Banner = styled.Image`
-    margin: 5px 5px 10px 5px;
-    height: 300;
-    width: 370;
-    border-radius: 5;
+    height: 300px;
+    width: 100%;
+    border-radius: 5px;
 `;
 
 
