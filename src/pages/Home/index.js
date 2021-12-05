@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {
     Container,
     TitleTipoReceitas,
@@ -27,27 +27,16 @@ import {
  } from './styles';
 import {Alert} from 'react-native';
 import {FontAwesome5} from '@expo/vector-icons';
+import {FontAwesome} from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import Receitas from '../Receitas';
 import TelaReceitas from '../Receitas/TelaReceitas';
-import {Modalize} from 'react-native-modalize';
-import ModalFavorito from '../../../components/modais/modalFavorito';
 
 export default function Home({navigation}){
-    const modalizeRef = useRef(null);
 
-    function onOpen(){
-        modalizeRef.current?.open();
-    }
     return(
         <Container showsVerticalScrollIndicator={false}>
-            <Modalize
-                ref={modalizeRef}
-                snapPoint={200}
-                modalHeight={250}
-            >
-                <ModalFavorito/>
-            </Modalize>
+
                 <BoxLogo>
                     <Logo
                         source={require('../../../assets/imagens/logo.png')}
@@ -70,7 +59,7 @@ export default function Home({navigation}){
                 </TitleReceitasAgrado>
 
                 <ListReceitasAgrado  horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <Cartao activeOpacity={0.9} onPress={() => navigation.navigate('TelaReceitas')}>
+                    <Cartao activeOpacity={0.9} onPress={() => navigation.navigate('Receitas')}>
                         <FoodsReceitasAgrado
                             source={require('../../../assets/imagens/foods/pizzaMussarela.jpg')}
                         />
@@ -90,8 +79,8 @@ export default function Home({navigation}){
 
 
                             <BoxButtons>
-                                <BoxBotaoLike activeOpacity={0.8} onPress={onOpen}>
-                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                <BoxBotaoLike activeOpacity={0.8}>
+                                    <FontAwesome name="heart-o" size={22} color="#DB9600"/>
                                 </BoxBotaoLike>
                                 <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}>
                                     <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
@@ -100,7 +89,7 @@ export default function Home({navigation}){
                         
                         </InformacaoCartao>
                     </Cartao>
-                    <Cartao activeOpacity={0.9}>
+                    <Cartao activeOpacity={0.9} onPress={() => navigation.navigate('Receitas')}>
                         <FoodsReceitasAgrado
                             source={require('../../../assets/imagens/foods/SALADA.jpg')}
                         />
@@ -119,8 +108,8 @@ export default function Home({navigation}){
                             </TempoInformacaoCartao>
 
                             <BoxButtons>
-                                <BoxBotaoLike activeOpacity={0.8} onPress={onOpen}>
-                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                <BoxBotaoLike activeOpacity={0.8}>
+                                    <FontAwesome name="heart-o" size={22} color="#DB9600"/>
                                 </BoxBotaoLike>
                                 <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para compartilhar')}}>
                                     <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>
@@ -130,7 +119,7 @@ export default function Home({navigation}){
                         </InformacaoCartao>
                         
                     </Cartao>
-                    <Cartao activeOpacity={0.9}>
+                    <Cartao activeOpacity={0.9} onPress={() => navigation.navigate('Receitas')}>
                         <FoodsReceitasAgrado
                             resizeMode="contain"
                             source={require('../../../assets/imagens/foods/frango.jpg')}
@@ -150,8 +139,8 @@ export default function Home({navigation}){
                             </TempoInformacaoCartao>
 
                             <BoxButtons>
-                                <BoxBotaoLike activeOpacity={0.8} onPress={onOpen}>
-                                    <FontAwesome5 name="heart" size={22} color="#DB9600"/>
+                                <BoxBotaoLike activeOpacity={0.8}>
+                                    <FontAwesome name="heart-o" size={22} color="#DB9600"/>
                                 </BoxBotaoLike>
                                 <BoxBotaoShare activeOpacity={0.8} onPress={() => {navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para poder compartilhar')}}>
                                     <FontAwesome5 name="code-branch" size={22} color="#DB9600"/>

@@ -34,16 +34,22 @@ export const ListaIngredientes = styled.Text`
     font-size: 20px;
 `;
 
-export const BannerReceita = styled.ScrollView`
+export const BannerReceita = styled.View`
 
 `;
 
 export const Banner = styled.Image`
     height: 300px;
     width: 100%;
-    border-radius: 5px;
 `;
 
+export const ConteudoReceita = styled.View`
+    margin-top: -20px;
+    background-color: #F5F1F1;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+`;
 
 export const TituloModoPreparo = styled.Text`
     font-size: 25px;
