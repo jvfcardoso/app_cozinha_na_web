@@ -31,7 +31,11 @@ import {
     TituloModoPreparo,
     ModoPreparo,
     BoxIngredientes,
+    InfoReceitas,
     BoxModoPreparo,
+    TextInfoTipoReceitas,
+    TextInfoDificuldadeReceitas,
+    TextInfoTempoPreparoReceitas,
 } from '../Receitas/TelaReceitas/styles';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -46,13 +50,21 @@ export default function Receitas({ navigation }) {
     let [nome, setNome] = useState('');
     let [ingredientes, setIngredientes] = useState('');
     let [modoPreparo, setModoPreparo] = useState('');
+    let [tipoReceita, setTipoReceita] = useState('');
+    let [dificuldade, setDificuldade] = useState('');
+    let [tempoPreparo, setTempoPreparo] = useState('');
+    let [iconeDificuldade, setIconeDificuldade] = useState('');
 
-    function alterarReceita(imagemReceita, nomeReceita, ingredientes, modoPreparo) {
+    function alterarReceita(imagemReceita, nomeReceita, ingredientes, modoPreparo, tipoReceita, dificuldade, tempoPreparo, iconeDificuldade) {
 
         setImagem(imagemReceita);
         setNome(nomeReceita);
         setIngredientes(ingredientes);
         setModoPreparo(modoPreparo);
+        setTipoReceita(tipoReceita);
+        setDificuldade(dificuldade);
+        setTempoPreparo(tempoPreparo);
+        setIconeDificuldade(iconeDificuldade);
 
         modalizeRef.current?.open();
 
@@ -84,6 +96,19 @@ export default function Receitas({ navigation }) {
                                 <TituloReceita>
                                     {nome}
                                 </TituloReceita>
+                                <InfoReceitas>
+                                        <TextInfoTipoReceitas>
+                                            <MaterialIcons name="category" size={15} color="black" />{'  '}{tipoReceita}
+                                        </TextInfoTipoReceitas>
+
+                                        <TextInfoDificuldadeReceitas>
+                                            {iconeDificuldade}{'  '}{dificuldade}
+                                        </TextInfoDificuldadeReceitas>
+
+                                        <TextInfoTempoPreparoReceitas>
+                                            <FontAwesome5 name="hourglass-start" size={15} color="black" />{'  '}{tempoPreparo}
+                                        </TextInfoTempoPreparoReceitas>
+                                </InfoReceitas>
 
                                 <TituloIngredientes>
                                     Ingredientes
@@ -167,7 +192,7 @@ export default function Receitas({ navigation }) {
                         <BoxReceitas
                             activeOpacity={0.8}
                             style={{ backgroundColor: item.uid % 2 == 0 ? '#FBF6E3' : '#FAB111' }}
-                            onPress={() => alterarReceita(item.imagemReceita, item.nomeReceita, item.ingredientes, item.modoPreparo)}
+                            onPress={() => alterarReceita(item.imagemReceita, item.nomeReceita, item.ingredientes, item.modoPreparo, item.tipoReceita, item.dificuldade, item.tempoPreparo, item.iconeDificuldade)}
                         >
                             <BoxImagemReceita>
                                 <ImagemReceita

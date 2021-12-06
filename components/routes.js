@@ -13,7 +13,7 @@ export default function Routes(){
     return(
             <Tab.Navigator
                 borderTopColor='transparent'
-                initialRouteName="Home"
+                initialRouteName="Receitas"
                 screenOptions={{
                     tabBarStyle:{
                         minHeight: 65,
