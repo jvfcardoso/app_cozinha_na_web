@@ -11,16 +11,15 @@ import {
     Input,
     TextoBotao,
  } from './styles';
-import {Modalize} from 'react-native-modalize';
+import { Modalize } from 'react-native-modalize';
 import ModalLogin from '../../../../components/modais/modalLogin';
 
 export default function Perfil({navigation}){
-    const modalizeRef = useRef(null);
+const modalizeRef = useRef(null);
 
-    function onOpen(){
-        modalizeRef.current?.open();
-    }
-
+function onOpen(){
+    modalizeRef.current?.open();
+}
     return(
         <Container>
             <Modalize

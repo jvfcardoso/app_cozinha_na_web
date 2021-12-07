@@ -18,7 +18,6 @@ import {Info} from './InfoReceitas';
 export default function TelaReceitas({navigation}){
     return(
             <Container>
-
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={Info}
