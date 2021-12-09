@@ -20,11 +20,35 @@ import {
  } from './styles';
 import Perfil from '../Perfil/perfilLogin';
 import { Alert } from 'react-native';
+import {Modalize} from 'react-native-modalize';
+import {ModalCursos} from '../../../components/modais/modalCursos';
 
 export default function Cursos({navigation}){
+    const modalizeRef = useState(null);
+    const [preco, setPreco] = useState(0);
+    const [curso, setCurso] = useState('');
+    const [tempo, setTempo] = useState(0);
+    const [descricao, setDescricao] = useState('');
+
+    function onOpen(preco, curso, tempo, descricao){
+        setPreco(preco);
+        setCurso(curso);
+        setTempo(tempo);
+        setDescricao(descricao);
+
+        modalizeRef.current?.open();
+    }
 
     return(
         <Container showsVerticalScrollIndicator={false}>
+            <Modalize
+                ref={modalizeRef}
+                snapPoint={500}
+                modalHeight={500}
+            >
+                <ModalCursos/>
+            </Modalize>
+
             <Header>
                <Logo
                     source={require('../../../assets/imagens/logo.png')}
@@ -63,7 +87,7 @@ export default function Cursos({navigation}){
                         <DescricaoCurso>
                         Esse curso é feito especialmente para você que não sabe ao menos ligar o fogão. Aqui você encontrará os conceitos básicos da cozinha, apresentando desde o vocabulário culinário até o preparo do seu primeiro bolo. Tudo isso muito bem explicativo e não se preocupe, nossos profissionais possuem uma linguagem muito simples o que ajudará na solução de dúvidas além de um chat com pessoas reais.
                         </DescricaoCurso>
-                        <ButtonSaibaMais activeOpacity={0.7} onPress={()=> {Alert.alert('Aviso', 'Acesse sua conta para continuar'), navigation.navigate('Perfil')}}>
+                        <ButtonSaibaMais activeOpacity={0.7}>
                             <TextoButtonSaibaMais>Saiba Mais</TextoButtonSaibaMais>
                         </ButtonSaibaMais>
                 </CartaoCursos>
@@ -77,7 +101,7 @@ export default function Cursos({navigation}){
                     <DescricaoCurso>
                         Quer dizer você já sabe cozinhar, mas mesmo assim deseja saber mais sobre o preparo de novos pratos? Então esse é o curso perfeito , pois aqui ensinaremos as receitas mais famosas de diversos cantos do globo, e ainda contamos com um bate-papo único que contextualiza as raízes culturais dessas iguarias. E claro, sem deixar de lado o suporte em tempo real.
                     </DescricaoCurso>
-                    <ButtonSaibaMais activeOpacity={0.7} onPress={()=> {Alert.alert('Aviso', 'Acesse sua conta para continuar'), navigation.navigate('Perfil')}}>
+                    <ButtonSaibaMais activeOpacity={0.7}>
                         <TextoButtonSaibaMais>Saiba Mais</TextoButtonSaibaMais>
                     </ButtonSaibaMais>
                 </CartaoCursos>
@@ -91,7 +115,7 @@ export default function Cursos({navigation}){
                     <DescricaoCurso>
                         Este curso é para você que está cursando ou já cursou um ensino especializado em gastronomia. Aqui você terá um conhecimento empresarial da área, sabendo como abrir seu próprio restaurante. Com a experiência de chefes que já estão no ramo a muito tempo você terá as melhores dicas e possíveis ajudas para abrir o seu negócio.
                     </DescricaoCurso>
-                    <ButtonSaibaMais activeOpacity={0.7} onPress={()=> {Alert.alert('Aviso', 'Acesse sua conta para continuar'), navigation.navigate('Perfil')}}>
+                    <ButtonSaibaMais activeOpacity={0.7}>
                         <TextoButtonSaibaMais>Saiba Mais</TextoButtonSaibaMais>
                     </ButtonSaibaMais>
                 </CartaoCursos>
@@ -100,3 +124,27 @@ export default function Cursos({navigation}){
         </Container>
     )
 }
+
+const descCurso = [
+    {
+        uid: '1',
+        curso: 'Iniciante',
+        descricao: '',
+        tempo: '',
+        preco: '',
+    },
+    {
+        uid: '2',
+        curso: 'Intermediário',
+        descricao: '',
+        tempo: '',
+        preco: '',
+    },
+    {
+        uid: '3',
+        curso: 'Avançado',
+        descricao: '',
+        tempo: '',
+        preco: '',
+    },
+]

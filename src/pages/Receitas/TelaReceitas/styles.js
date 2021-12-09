@@ -11,9 +11,10 @@ export const ViewReceitas = styled.View`
 `;
 
 export const TituloReceita = styled.Text`
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     margin: 20px 0 20px 20px;
+    color: #fab111;
 `;
 
 export const TituloIngredientes = styled.Text`
@@ -67,4 +68,21 @@ export const BoxModoPreparo = styled.View`
 
 export const ModoPreparo = styled.Text`
     font-size: 20px;
+`;
+
+export const InfoReceitas = styled.View`
+    margin: 0px 0px 10px 20px;
+    justify-content: space-evenly;
+`;
+
+export const TextInfoTipoReceitas = styled.Text`
+    font-size: 15px;
+`;
+
+export const TextInfoDificuldadeReceitas = styled.Text`
+    font-size: 15px;
+`;
+
+export const TextInfoTempoPreparoReceitas = styled.Text`
+    font-size: 15px;
 `;

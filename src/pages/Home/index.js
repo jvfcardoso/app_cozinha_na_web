@@ -100,11 +100,11 @@ export default function Home({navigation}){
                             </TituloInformacaoCartao>
 
                             <TipoInformacaoCartao>
-                                Diet
+                                Saladas
                             </TipoInformacaoCartao>
 
                             <TempoInformacaoCartao>
-                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 25min
+                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 30min
                             </TempoInformacaoCartao>
 
                             <BoxButtons>
@@ -131,11 +131,11 @@ export default function Home({navigation}){
                             </TituloInformacaoCartao>
 
                             <TipoInformacaoCartao>
-                                Assados
+                                Frituras
                             </TipoInformacaoCartao>
 
                             <TempoInformacaoCartao>
-                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 30min
+                                <FontAwesome5 name="clock" size={12} color="#B5B5B5"/> 60min
                             </TempoInformacaoCartao>
 
                             <BoxButtons>
@@ -160,7 +160,7 @@ export default function Home({navigation}){
                         <CartaoReceitas>
                             <Legendas>Hambúrgueres</Legendas>
                                 <FoodsTipoReceitas
-                                        source={require('../../../assets/imagens/foods/xcheese.png')}
+                                        source={require('../../../assets/imagens/foods/x.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
                                     <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />
@@ -178,9 +178,9 @@ export default function Home({navigation}){
                         </CartaoReceitas>
 
                         <CartaoReceitas>
-                            <Legendas>Bebidas</Legendas>
+                            <Legendas>Churrasco</Legendas>
                                 <FoodsTipoReceitas
-                                        source={require('../../../assets/imagens/foods/bebidas.png')}
+                                        source={require('../../../assets/imagens/foods/espeto.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
                                     <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />
@@ -188,9 +188,9 @@ export default function Home({navigation}){
                         </CartaoReceitas>
 
                         <CartaoReceitas>
-                            <Legendas>Sorvetes</Legendas>
+                            <Legendas>Frituras</Legendas>
                                 <FoodsTipoReceitas
-                                        source={require('../../../assets/imagens/foods/sorvete.png')}
+                                        source={require('../../../assets/imagens/foods/coxinha.png')}
                                 />
                                 <ButtonIcon activeOpacity={0.8} onPress={() => navigation.navigate('Receitas')}>
                                     <Ionicons name="arrow-redo-outline" size={30} color="#DB9600" />

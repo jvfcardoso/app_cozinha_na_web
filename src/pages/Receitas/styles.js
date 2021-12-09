@@ -121,3 +121,26 @@ export const BotaoFavorito = styled.TouchableOpacity`
     justify-content: center;
     align-self: flex-end;
 `;
+
+export const BoxPesquisar = styled.View`
+    margin: 0px 15px;
+`;
+
+export const Pesquisar = styled.TextInput`
+    width: 100%;
+    background-color: #F2F2F270;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border-width: 1px;
+`;
+
+export const BoxRadios = styled.View`
+    margin: 0 10px 10px 10px;
+    flex-direction: row;
+    align-items: center;
+`;
+
+export const TextRadio = styled.Text`
+
+`;
+

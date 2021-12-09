@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { FlatList, Alert } from 'react-native';
 import {
     BoxCategorias,
@@ -19,6 +19,10 @@ import {
     CartaoCategoria,
     TextCartao,
     TitleInfo,
+    BoxPesquisar,
+    Pesquisar,
+    BoxRadios,
+    TextRadio,
 } from './styles';
 import {
     ConteudoReceita,
@@ -31,28 +35,187 @@ import {
     TituloModoPreparo,
     ModoPreparo,
     BoxIngredientes,
+    InfoReceitas,
     BoxModoPreparo,
+    TextInfoTipoReceitas,
+    TextInfoDificuldadeReceitas,
+    TextInfoTempoPreparoReceitas,
 } from '../Receitas/TelaReceitas/styles';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Modalize } from 'react-native-modalize';
 import { Info } from '../Receitas/TelaReceitas/InfoReceitas';
+import { RadioButton } from 'react-native-paper';
 
-export default function Receitas({ navigation }) {
+export default function Receitas({navigation}) {
+    const [searchText, setSearchText] = useState('');
+    const [list, setList] = useState(dadosReceitas);
+    const [clickMassas, setClickMassas] = useState(0);
+    const [clickCozidos, setClickCozidos] = useState(0);
+    const [clickSobremesas, setClickSobremesas] = useState(0);
+    const [clickBolos, setClickBolos] = useState(0);
+    const [clickFrituras, setClickFrituras] = useState(0);
+    const [clickHamburguer, setClickHamburguer] = useState(0);
+    const [clickTodas, setClickTodas] = useState(0);
+    const [clickSaladas, setClickSaladas] = useState(0);
+    const [clickAssados, setClickAssados] = useState(0);
+    const [clickChurrasco, setClickChurrasco] = useState(0);
+    const [clickFacil, setClickFacil] = useState(0);
+    const [clickMedio, setClickMedio] = useState(0);
+    const [clickDificil, setClickDificil] = useState(0);
+    const [clickDificuldadeTodas, setClickDificuldadeTodas] = useState(0);
+    const [checked, setChecked] = useState('unchecked');
+    const [colorIconFav, setColorIconFav] = useState('');
+    const [iconFav, setIconFav] = useState('heart-o');
+
+    // Pesquisar
+    useEffect(() => {
+        if(searchText === ''){
+            setList(dadosReceitas);
+        }else{
+            setList(
+                dadosReceitas.filter((item) => (item.nomeReceita.toLowerCase().indexOf(searchText.toLowerCase()) > -1))
+            );
+        }
+    }, [searchText]);
+
+    // Categorias
+    useEffect(() =>{
+        if(clickMassas > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Massas'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickMassas]);
+
+    useEffect(() =>{
+        if(clickSobremesas > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Sobremesas'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickSobremesas]);
+
+    useEffect(() =>{
+        if(clickBolos > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Bolos'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickBolos]);
+
+    useEffect(() =>{
+        if(clickHamburguer > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Hambúrgueres'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickHamburguer]);
+
+    useEffect(() =>{
+        if(clickFrituras > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Frituras'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickFrituras]);
+
+    useEffect(() =>{
+        if(clickCozidos > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Cozidos'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickCozidos]);
+
+    useEffect(() => {
+        if(clickTodas > 0){
+            setList(dadosReceitas);
+        }else{
+            return
+        }
+    }, [clickTodas]);
+
+    useEffect(() =>{
+        if(clickSaladas > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Saladas'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickSaladas]);
+    
+    useEffect(() =>{
+        if(clickAssados > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Assados'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickAssados]);
+    
+    useEffect(() =>{
+        if(clickChurrasco > 0){
+            setList(dadosReceitas.filter((item) => item.tipoReceita == 'Churrasco'));
+        }else{
+            setList(dadosReceitas);
+        }
+    }, [clickChurrasco]);
+    
+    // Dificuldades
+    useEffect(() =>{
+        if(clickDificuldadeTodas > 0){
+            setList(list);           
+        }else{
+            return
+        }
+    }, [clickDificuldadeTodas]);
+
+    useEffect(() =>{
+        if(clickFacil > 0){
+            setList(list.filter((item) => item.dificuldade == 'Fácil'));
+        }else{
+            setList(list);
+        }
+    }, [clickFacil]);
+    
+    useEffect(() =>{
+        if(clickMedio > 0){
+            setList(list.filter((item) => item.dificuldade == 'Médio'));
+        }else{
+            setList(list);
+        }
+    }, [clickMedio]);
+
+    useEffect(() =>{
+        if(clickDificil > 0){
+            setList(list.filter((item) => item.dificuldade == 'Difícil'));
+        }else{
+            setList(list);
+        }
+    }, [clickDificil]);
+
+
     const modalizeRef = useRef(null);
-
+    
     let [imagem, setImagem] = useState('');
     let [nome, setNome] = useState('');
     let [ingredientes, setIngredientes] = useState('');
     let [modoPreparo, setModoPreparo] = useState('');
+    let [tipoReceita, setTipoReceita] = useState('');
+    let [dificuldade, setDificuldade] = useState('');
+    let [tempoPreparo, setTempoPreparo] = useState('');
+    let [iconeDificuldade, setIconeDificuldade] = useState('');
 
-    function alterarReceita(imagemReceita, nomeReceita, ingredientes, modoPreparo) {
+    function alterarReceita(imagemReceita, nomeReceita, ingredientes, modoPreparo, tipoReceita, dificuldade, tempoPreparo, iconeDificuldade) {
 
         setImagem(imagemReceita);
         setNome(nomeReceita);
         setIngredientes(ingredientes);
         setModoPreparo(modoPreparo);
+        setTipoReceita(tipoReceita);
+        setDificuldade(dificuldade);
+        setTempoPreparo(tempoPreparo);
+        setIconeDificuldade(iconeDificuldade);
 
         modalizeRef.current?.open();
 
@@ -84,6 +247,19 @@ export default function Receitas({ navigation }) {
                                 <TituloReceita>
                                     {nome}
                                 </TituloReceita>
+                                <InfoReceitas>
+                                        <TextInfoTipoReceitas>
+                                            <MaterialIcons name="category" size={15} color="black" />{'  '}{tipoReceita}
+                                        </TextInfoTipoReceitas>
+
+                                        <TextInfoDificuldadeReceitas>
+                                            {iconeDificuldade}{'  '}{dificuldade}
+                                        </TextInfoDificuldadeReceitas>
+
+                                        <TextInfoTempoPreparoReceitas>
+                                            <FontAwesome5 name="hourglass-start" size={15} color="black" />{'  '}{tempoPreparo}
+                                        </TextInfoTempoPreparoReceitas>
+                                </InfoReceitas>
 
                                 <TituloIngredientes>
                                     Ingredientes
@@ -120,54 +296,126 @@ export default function Receitas({ navigation }) {
                 </ButtonReceitas>
             </BoxLogo>
 
-            <PaginaReceitas showsVerticalScrollIndicator={false}>
+
+            <BoxPesquisar>
+                    <Pesquisar
+                        placeholder={'Pesquisar receita'}
+                        value={searchText}
+                        onChangeText={(t) => setSearchText(t)}
+                    />
+            </BoxPesquisar>
+
+
                 <BoxCategorias>
-                    <Titulo>Categorias</Titulo>
+                    <Titulo>Categorias: </Titulo>
                     <Categorias horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <CartaoCategoria activeOpacity={0.8}>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickTodas(clickTodas + 1), setChecked('unchecked')}}>
+                            <TextCartao>
+                                Todas
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickMassas(clickMassas + 1), setChecked('unchecked')}}>
                             <TextCartao>
                                 Massas
                             </TextCartao>
                         </CartaoCategoria>
-                        <CartaoCategoria activeOpacity={0.8}>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickCozidos(clickCozidos + 1), setChecked('unchecked')}}>
                             <TextCartao>
-                                Sorvetes
+                                Cozidos
                             </TextCartao>
                         </CartaoCategoria>
-                        <CartaoCategoria activeOpacity={0.8}>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickSobremesas(clickSobremesas + 1), setChecked('unchecked')}}>
                             <TextCartao>
                                 Sobremesas
                             </TextCartao>
                         </CartaoCategoria>
-                        <CartaoCategoria activeOpacity={0.8}>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickBolos(clickBolos + 1), setChecked('unchecked')}}>
                             <TextCartao>
                                 Bolos
                             </TextCartao>
                         </CartaoCategoria>
-                        <CartaoCategoria activeOpacity={0.8}>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickHamburguer(clickHamburguer + 1), setChecked('unchecked')}}>
                             <TextCartao>
                                 Hambúrgueres
                             </TextCartao>
                         </CartaoCategoria>
-                        <CartaoCategoria activeOpacity={0.8}>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickFrituras(clickFrituras + 1), setChecked('unchecked')}}>
                             <TextCartao>
-                                Bebidas
+                                Frituras
                             </TextCartao>
                         </CartaoCategoria>
-
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickSaladas(clickSaladas + 1), setChecked('unchecked')}}>
+                            <TextCartao>
+                                Saladas
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickAssados(clickAssados + 1), setChecked('unchecked')}}>
+                            <TextCartao>
+                                Assados
+                            </TextCartao>
+                        </CartaoCategoria>
+                        <CartaoCategoria activeOpacity={0.8} onPress={() => {setClickChurrasco(clickChurrasco + 1), setChecked('unchecked')}}>
+                            <TextCartao>
+                                Churrasco
+                            </TextCartao>
+                        </CartaoCategoria>
                     </Categorias>
                 </BoxCategorias>
 
 
+                    <BoxRadios>
+                <Titulo>Dificuldade: </Titulo>
+                        <RadioButton
+                            value="first"
+                            status={checked === 'first' ? 'checked' : 'unchecked'}
+                            onPress={() => {setClickFacil(clickFacil + 1), setChecked('first')}}
+                            color= '#fab111'
+                        />
+                        <TextRadio>
+                            Fácil
+                        </TextRadio>
+                   
+                        <RadioButton
+                            value="second"
+                            status={checked === 'second' ? 'checked' : 'unchecked'}
+                            onPress={() => {setClickMedio(clickMedio + 1), setChecked('second')}}
+                            color= '#fab111'
+                        />
+                        <TextRadio>
+                            Médio
+                        </TextRadio>
+                    
+                        <RadioButton
+                            value="third"
+                            status={checked === 'third' ? 'checked' : 'unchecked'}
+                            onPress={() => {setClickDificil(clickDificil + 1), setChecked('third')}}
+                            color= '#fab111'
+                        />
+                        <TextRadio>
+                            Difícil
+                        </TextRadio>
+
+                        <RadioButton
+                            value="fourth"
+                            status={checked === 'fourth' ? 'checked' : 'unchecked'}
+                            onPress={() => {setClickDificuldadeTodas(clickDificuldadeTodas + 1), setChecked('fourth')}}
+                            color= '#fab111'
+                        />
+                        <TextRadio>
+                            Todas
+                        </TextRadio>
+                    </BoxRadios>
+
+            <PaginaReceitas showsVerticalScrollIndicator={false}>
                 <FlatList
                     style={{ marginBottom: 35, marginTop: 10 }}
                     showsVerticalScrollIndicator={false}
-                    data={dadosReceitas}
+                    data={list}
                     renderItem={({ item }) => (
                         <BoxReceitas
                             activeOpacity={0.8}
                             style={{ backgroundColor: item.uid % 2 == 0 ? '#FBF6E3' : '#FAB111' }}
-                            onPress={() => alterarReceita(item.imagemReceita, item.nomeReceita, item.ingredientes, item.modoPreparo)}
+                            onPress={() => alterarReceita(item.imagemReceita, item.nomeReceita, item.ingredientes, item.modoPreparo, item.tipoReceita, item.dificuldade, item.tempoPreparo, item.iconeDificuldade)}
                         >
                             <BoxImagemReceita>
                                 <ImagemReceita
@@ -182,9 +430,9 @@ export default function Receitas({ navigation }) {
                                 <TextInfo><FontAwesome5 name="hourglass-start" size={15} color="black" />  {item.tempoPreparo}</TextInfo>
                                 <BotaoFavorito
                                     activeOpacity={0.7}
-                                    onPress={() => { navigation.navigate('Perfil'), Alert.alert('Aviso', 'Acesse sua conta para marcar como favorito') }}
+                                    
                                 >
-                                    <FontAwesome5 name="heart" size={22} color="#000" />
+                                    <FontAwesome name="heart-o" size={22} color="#000" />
                                 </BotaoFavorito>
                             </BoxTextInfo>
                         </BoxReceitas>
@@ -402,7 +650,7 @@ const dadosReceitas = [
     {
         uid: '19',
         nomeReceita: 'Maionese tradicional',
-        tipoReceita: 'Acompanhamentos',
+        tipoReceita: 'Saladas',
         dificuldade: 'Fácil',
         tempoPreparo: '30min',
         imagemReceita: require('../../../assets/imagens/foods/maionese.jpg'),
@@ -487,6 +735,50 @@ const dadosReceitas = [
         ingredientes: 'Recheio:\n\n500 g de peito de frango sem pele\n• ½ litro de caldo de galinha\n• 4 colheres (sopa) de óleo\n• 1 dente de alho amassado\n• 1 cebola picada\n• 3 tomates sem pele e sem sementes\n• 1 xícara (chá) de ervilhas\n• sal e pimenta-do-reino a gosto\n\nMassa:\n\n250 ml de leite\n• 3/4 de xícara (chá) de óleo\n• 2 ovos\n• 1 e ½ xícara (chá) de farinha de trigo\n• sal a gosto\n• 1 colher (sopa) de fermento em pó\n• queijo ralado a gosto',
         modoPreparo: '• Recheio:\n\nCozinhe o peito de frango no caldo até ficar macio.\n\nSepare 1 xícara (chá) de caldo do cozimento e reserve.\n\nRefogue os demais ingredientes e acrescente as ervilhas por último.\n\nDesfie o frango, misture ao caldo e deixe cozinhar até secar.\n\n• Massa:\n\nBata o leite, o óleo e os ovos no liquidificador em velocidade baixa.\n\nAcrescente aos poucos a farinha, o sal e o fermento.\n\nDespeje metade da massa em uma forma untada e adicione o recheio sobre ela.\n\nCubra com o restante de massa e o queijo ralado.\n\nLeve ao forno preaquecido (180° C) até dourar.',
     },
+    {
+        uid: '27',
+        nomeReceita: 'Salada de Vegetais',
+        tipoReceita: 'Saladas',
+        dificuldade: 'Fácil',
+        tempoPreparo: '30min',
+        imagemReceita: require('../../../assets/imagens/foods/SALADA.jpg'),
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />,
+        ingredientes: '• 1 batata média em cubos pequenos\n• 1 cenoura média em cubos pequenos\n• meia xícara (chá) de vagem em pedaços pequenos\n• meia xícara (chá) de ervilhas frescas\n• 1 pote de Iogurte Tradicional\n• 1 colher (sopa) de azeite\n• 1 colher (sopa) de mostarda\n• 1 pitada de pimenta-do-reino\n• 1 colher (chá) de sal\n• 10 azeitonas verdes picadas\n• meia cebola roxa bem picada\n• 3 colheres (sopa) de cebolinha-verde picada\n• 1 colher (sopa) de salsa picada',
+        modoPreparo: 'Em uma panela com água fervente e sal coloque a batata, a cenoura e a vagem. Cozinhe por 5 minutos.\n\nJunte as ervilhas e deixe finalizar o cozimento até que tudo esteja macio, porém sem desmanchar (cerca de 10 minutos).\n\nEscorra e reserve.\n\nEm um recipiente grande misture o Iogurte, o azeite, a mostarda, a pimenta-do-reino e o sal.\n\nJunte os legumes reservados, as azeitonas, a cebola, a cebolinha e a salsa e misture delicadamente.\n\nCubra com plástico-filme e deixe gelar até o momento de servir.'
+    },
+    {
+        uid: '28',
+        nomeReceita: 'Frango a Passarinho',
+        tipoReceita: 'Frituras',
+        dificuldade: 'Fácil',
+        tempoPreparo: '60min',
+        imagemReceita: require('../../../assets/imagens/foods/frango.jpg'),
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />,
+        ingredientes: '• 10 asas de frango\n• 4 dentes de alho amassados\n• suco de 1 limão\n• 1 colher (sopa) de azeite\n• óleo para fritar\n• páprica a gosto\n• sal a gosto\n• pimenta tabasco a gosto',
+        modoPreparo: 'Em uma tigela, adicione o alho, o sal, a pimenta, o limão, a páprica e o óleo, depois misture com uma colher.\n\nAdicione os pedaços de frango e misture com as mãos até que os pedaços estejam completamente temperados, depois deixe descansar por 30 minutos.\n\nEm uma panela grande, adicione o óleo e aqueça-o, depois despeje o frango e deixe fritar até que esteja bem dourado dos dois lados.'
+    },
+    {
+        uid: '29',
+        nomeReceita: 'Pão de Alho para churrasco',
+        tipoReceita: 'Churrasco',
+        dificuldade: 'Fácil',
+        tempoPreparo: '10min',
+        imagemReceita: require('../../../assets/imagens/foods/paoAlho.jpg'),
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />,
+        ingredientes: '• 6 pães franceses (médios)\n• 1 vidro pequeno de maionese\n• 2 colheres (sopa) de alho picadinho\n• 1 colher (sopa) não muito cheia de orégano\n• 1/2 xícara (chá) de cheiro-verde picado\n• 1/2 xícara (chá) de parmesão ralado\n• sal e pimenta a gosto',
+        modoPreparo: 'Em um recipiente misture a maionese, o alho, o orégano, o cheiro-verde, o sal e a pimenta e reserve.\n\nFaça cortes horizontais no pão francês de maneira a formar pequenas fatias (mais ou menos 4), mas sem desprendê-las umas das outras (como no pão de alho comprado).\n\nPasse a mistura reservada entre as fatias e depois envolvendo todo os pães.\n\nPolvilhe sobre os pães o parmesão ralado.\n\nLeve à churrasqueira e asse bem de ambos os lados.'
+    },
+    {
+        uid: '30',
+        nomeReceita: 'Espetinho de Carne',
+        tipoReceita: 'Churrasco',
+        dificuldade: 'Fácil',
+        tempoPreparo: '10min',
+        imagemReceita: require('../../../assets/imagens/foods/espetinho.jpeg'),
+        iconeDificuldade: <FontAwesome name="star-o" size={15} color="black" />,
+        ingredientes: '• 300 g de alcatra\n• sal a gosto\n• pimenta-do-reino a gosto\n• salda desidratada a gosto\n• bacon 300 g\n• 1 pimentão verde\n• 1 piomentão vermelho\n• 1 cebola',
+        modoPreparo: 'Corte a alcatra em pequenos cubos e tempere com sal, pimenta-do-reino e salsinha desidratada.\n\nCorte o pimentão verde, vermelho, a cebola e o bacon em pedaços pequenos.\n\nPegue os palitos de de churrasco e comece a montar o espetinho.\n\nPrimeiro espete o bacon, depois o pimentão vermelho, a cebola, a alcatra, o pimentão verde e assim por diante.\n\nLeve a churrasqueira e tempere os espetinhos com sal grosso.\n\nCozinhe até o ponto desejado.'
+    }
 
 
 ]
