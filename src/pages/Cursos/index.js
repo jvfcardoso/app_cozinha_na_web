@@ -20,35 +20,11 @@ import {
  } from './styles';
 import Perfil from '../Perfil/perfilLogin';
 import { Alert } from 'react-native';
-import {Modalize} from 'react-native-modalize';
-import {ModalCursos} from '../../../components/modais/modalCursos';
 
 export default function Cursos({navigation}){
-    const modalizeRef = useState(null);
-    const [preco, setPreco] = useState(0);
-    const [curso, setCurso] = useState('');
-    const [tempo, setTempo] = useState(0);
-    const [descricao, setDescricao] = useState('');
-
-    function onOpen(preco, curso, tempo, descricao){
-        setPreco(preco);
-        setCurso(curso);
-        setTempo(tempo);
-        setDescricao(descricao);
-
-        modalizeRef.current?.open();
-    }
 
     return(
         <Container showsVerticalScrollIndicator={false}>
-            <Modalize
-                ref={modalizeRef}
-                snapPoint={500}
-                modalHeight={500}
-            >
-                <ModalCursos/>
-            </Modalize>
-
             <Header>
                <Logo
                     source={require('../../../assets/imagens/logo.png')}
@@ -124,27 +100,3 @@ export default function Cursos({navigation}){
         </Container>
     )
 }
-
-const descCurso = [
-    {
-        uid: '1',
-        curso: 'Iniciante',
-        descricao: '',
-        tempo: '',
-        preco: '',
-    },
-    {
-        uid: '2',
-        curso: 'Intermediário',
-        descricao: '',
-        tempo: '',
-        preco: '',
-    },
-    {
-        uid: '3',
-        curso: 'Avançado',
-        descricao: '',
-        tempo: '',
-        preco: '',
-    },
-]
